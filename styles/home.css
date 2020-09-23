@@ -33,7 +33,7 @@
     background-image: url('./assets/background.gif');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -53,6 +53,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    padding: 20px 10px;
 }
 
 .text-box{
@@ -77,10 +78,9 @@
       min-width:500px ;
     }
   }
-
   @media only screen and (max-width: 550px) {
     .text-box {
-      min-width:400px ;
+      min-width:300px ;
     }
   }
 

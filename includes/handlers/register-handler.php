@@ -1,6 +1,7 @@
 <?php
 
-function sanitizeFormInput($inputText){
+function sanitizeFormInput($inputText)
+{
     $inputText=stripslashes($inputText);
     $inputText=htmlspecialchars($inputText);
     $inputText=trim($inputText);
@@ -10,12 +11,16 @@ function sanitizeFormInput($inputText){
 }
 
 
-if(isset($_POST['sumbit'])){
+if(isset($_POST['sumbit']))
+{
     $userEmail=sanitizeFormInput($_POST['InputEmail1']);
     $password1=sanitizeFormInput($_POST['password1']);
     $password2=sanitizeFormInput($_POST['password2']);
     $profileName= sanitizeFormInput($_POST['profileName']);
     $contactNo=sanitizeFormInput($_POST['contactNo']);
+    $date=sanitizeFormInput($_POST['dobDate']);
+    $month=sanitizeFormInput($_POST['dobMonth']);
+    $year=sanitizeFormInput($_POST['dobYear']);
 }
 
 ?>

@@ -53,8 +53,8 @@ include('includes/scripts.php');
                         <div class="form-group">
                             <label for="dob">What is your date of birth? </label>
                             <div class="row">
-                                <input type="text" class="form-control col-md-3 si-in" id="date"  placeholder="Date" required>
-                                <select id="month" name="month" class="form-control si-in col-md-3 mx-3" id="month" required>
+                                <input type="text" class="form-control col-md-3 si-in" id="date" name="dobDate"  placeholder="Date" required>
+                                <select id="month" name="dobMonth" class="form-control si-in col-md-3 mx-3" id="month" required>
                                     <option value="">Month</option>
                                     <option value="01">January</option>
                                     <option value="02">February</option>
@@ -70,7 +70,7 @@ include('includes/scripts.php');
                                     <option value="12">December</option>
                                 </select>
 
-                                <input type="text" class="form-control si-in col-md-3" id="year" placeholder="Year" required>
+                                <input type="text" class="form-control si-in col-md-3" name="dobYear" id="year" placeholder="Year" required>
                             </div>
                         </div>
                         <div class="form-check form-group">
