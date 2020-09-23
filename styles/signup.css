@@ -1,0 +1,149 @@
+.background1{
+    /* background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%); */
+    background-color: #d4418e;
+    background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+    padding: 40px 150px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.background2{
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+.background3{
+    background-color: #D4D9F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.background4{
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0,0.5);
+}
+
+.si-in{
+    width: 60%;
+    border: none;
+    border-bottom: 1px solid #FF6464 ;
+    padding: 0;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    padding-left: 7%;
+    background-size: 10% 90%;
+}
+
+
+.si-in:focus{
+    border: none;
+    box-shadow: none;
+    border-bottom: 3px solid black;
+}
+
+.si-title{
+    color: #FF6464;
+    text-shadow: 2px 2px #575962;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#InputEmail1{
+    background-image:url('./assets/email.png');
+}
+
+#password1{
+    background-image:url('./assets/password1.png');
+}
+
+#password2{
+    background-image:url('./assets/password.png');
+}
+
+#profileName{
+    background-image:url('./assets/profile.png');
+}
+
+#contactNo{
+    background-image:url('./assets/contact.png');
+}
+#date{
+    background-image:url('./assets/dob.png');
+    background-size: 25% 90%;
+}
+#month{
+    background-image:url('./assets/month.png');
+    background-size: 25% 90%;
+}
+#year{
+    background-image:url('./assets/year.png');
+    background-size: 25% 90%;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.signup-form label{
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.si-btn{
+    background-color: #d4418e;
+    background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+    color: white;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0,0.7);
+}
+
+.si-btn:hover{
+    background-color:#FF6464 !important;
+    background-image: none;
+}
+
+@media only screen and (max-width: 768px) { 
+
+    .background1{
+        padding: 30px 20px;
+
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .form-col{
+        padding-left: 20px !important ;
+    }
+
+    .background3{
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 30px;
+        
+    }
+
+    .si-img{
+        height: 90%;
+    }
+
+    .si-in{
+        width: 100%;
+        padding-left: 11%;
+        background-size: 10% 90% !important;
+        margin: 0 !important;
+    }
+  }
