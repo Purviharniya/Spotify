@@ -2,7 +2,7 @@
 include('includes/scripts.php');
 include('includes/classes/Account.php');
 
-$account=new Account();
+$account = new Account();
 
 include('includes/handlers/register-handler.php');
 ?>
@@ -25,7 +25,7 @@ include('includes/handlers/register-handler.php');
                     <div class="row pb-4">
                         <h1 class="si-title"> Sign up </h1>    
                     </div>
-                    <form method="post" action="signup.php" class="signup-form" autocomplete="off">
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="signup-form" autocomplete="off">
                         <div class="form-group">
                             <label for="InputEmail1">What's your email?</label>
                             <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" required>

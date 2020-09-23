@@ -9,19 +9,27 @@ class Account{
     }
 
     public function register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc){
-
+        echo "hello";
         $this->validateEmail($userEmail);
         $this->validatePasswords($password1,$password2);
         $this->validateProfileName($profileName);
         $this->validateContact($contactNo);
         $this->validateDOB($date,$month,$year);
         $this->validateTnC($tnc);
+
+        if(empty($this->errorArray)){
+            //insert to db
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     private function validateEmail($em){
         if (!filter_var($em, FILTER_VALIDATE_EMAIL)) {
             array_push($this->errorArray, "Enter a valid Email");
-        return;
+            return;
         }
 
         //TODO: check if email already exists

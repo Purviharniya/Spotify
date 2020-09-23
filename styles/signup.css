@@ -37,7 +37,7 @@
     border-radius: 0;
     background-repeat: no-repeat;
     padding-left: 7%;
-    background-size: 10% 90%;
+    background-size: 10% 100%;
 }
 
 
@@ -75,15 +75,15 @@
 }
 #date{
     background-image:url('./assets/dob.png');
-    background-size: 25% 90%;
+    background-size: 25% 100%;
 }
 #month{
     background-image:url('./assets/month.png');
-    background-size: 25% 90%;
+    background-size: 25% 100%;
 }
 #year{
     background-image:url('./assets/year.png');
-    background-size: 25% 90%;
+    background-size: 25% 100%;
 }
 
 .row{
@@ -120,7 +120,7 @@
 
 @media only screen and (max-width:1024px){
     .si-in{
-        background-size: 20% 90%;
+        background-size: 20% 100%;
     }
 }
 
@@ -154,7 +154,7 @@
     .si-in{
         width: 100%;
         padding-left: 11%;
-        background-size: 10% 90% !important;
+        background-size: 10% 100% !important;
         margin: 0 !important;
     }
   }

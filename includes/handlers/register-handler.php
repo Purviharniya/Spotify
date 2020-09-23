@@ -3,13 +3,11 @@
 function sanitizeFormInput($inputText)
 {
     $inputText=stripslashes($inputText);
-    $inputText=htmlspecialchars($inputText);
     $inputText=trim($inputText);
     $inputText=strip_tags($inputText);
     $inputText=str_replace(" ","",$inputText);
     return $inputText;
 }
-
 
 if(isset($_POST['sumbit']))
 {
@@ -23,10 +21,14 @@ if(isset($_POST['sumbit']))
     $year=sanitizeFormInput($_POST['dobYear']);
     $tnc=isset($_POST['tnc']);
 
-    $account->register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc);
+
+
+    $success= $account->register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc);
+
+    if($success){
+        header("Location: landing.php");
+    }
 
 }
-
-
 
 ?>
