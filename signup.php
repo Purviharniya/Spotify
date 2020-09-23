@@ -1,5 +1,10 @@
 <?php  
 include('includes/scripts.php');
+include('includes/classes/Account.php');
+
+$account=new Account();
+
+include('includes/handlers/register-handler.php');
 ?>
 
 <html>

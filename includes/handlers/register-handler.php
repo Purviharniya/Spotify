@@ -22,6 +22,9 @@ if(isset($_POST['sumbit']))
     $month=sanitizeFormInput($_POST['dobMonth']);
     $year=sanitizeFormInput($_POST['dobYear']);
     $tnc=isset($_POST['tnc']);
+
+    $account->register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc);
+
 }
 
 
