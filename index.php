@@ -11,7 +11,7 @@ include('includes/scripts.php');
 
     <body>
         <section class="navigation bar">
-            <nav class="navbar navbar-expand-lg py-4 fixed-top home-navbar">
+            <nav class="navbar navbar-expand-lg py-4 home-navbar">
                 <div class="container">
                     <a class="navbar-brand home-navbar-brand" href="/spotify/index.php"><img src="./styles/assets/logo.png" class="img-fluid" height="40" width="45"> Spotify</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#homenav" aria-controls="homenav" aria-expanded="false" aria-label="Toggle navigation">
