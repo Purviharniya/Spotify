@@ -48,15 +48,48 @@ class Account{
     }
 
     private function validateContact($no){
+        if(strlen($no)!=10){
+            array_push($this->errorArray, "Contact number must have 10 digits only!");
+            return;
+        }
+
+        if(!preg_match('/^[6-9]\d{9}$/', $no)){
+            array_push($this->errorArray, "Contact number must start with 6,7,8 or 9!");
+            return;
+        }
 
     }
 
     private function validateDOB($d,$m,$y){
+        if (!preg_match("/^[0-9]*$/",$y))
+        {
+            array_push($this->errorArray,"Invalid Year");
+            return;
+        }
+
+        $curr_year = date("Y");
+        if((($curr_year-$dob_year) >= 100 ) || ($dob_year>=$curr_year)){
+            array_push($this->errorArray, "Invalid Year");
+            return;
+        }
+
+        if($m == '' || empty($m)){
+            array_push($this->errorArray, "Month is required");
+            return;
+        }
+
+        if(!checkdate($dob_month,$dob_date,$dob_year)){
+            array_push($this->errorArray, "Invalid date of birth");
+            return;
+        }
 
     }
 
     private function validateTnC($tnc){
-
+        if(empty($tnc) || $tnc==''){
+            array_push($this->errorArray, "Accept to the terms & conditions");
+            return;
+        }
     }
 
 }
