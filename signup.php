@@ -20,7 +20,7 @@ include('includes/scripts.php');
                     <div class="row pb-4">
                         <h1 class="si-title"> Sign up </h1>    
                     </div>
-                    <form method="post" action="#" class="signup-form">
+                    <form method="post" action="signup.php" class="signup-form" autocomplete="off">
                         <div class="form-group">
                             <label for="InputEmail1">What's your email?</label>
                             <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" required>

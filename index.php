@@ -10,7 +10,6 @@ include('includes/scripts.php');
     </head>
 
     <body>
-
         <section class="navigation bar">
             <nav class="navbar navbar-expand-lg py-4 fixed-top home-navbar">
                 <div class="container">
@@ -34,7 +33,7 @@ include('includes/scripts.php');
                             <a class="home-link nav-link d-block d-md-none"> --- </a>
                         </li>
                         <li class="nav-item pr-4">
-                            <a class="home-link nav-link" href="#"><i class="fa fa-sign-in"></i> Sign up</a>
+                            <a class="home-link nav-link" href="signup.php"><i class="fa fa-sign-in"></i> Sign up</a>
                         </li> 
                         <li class="nav-item">
                             <a class="home-link nav-link" href="#"> <i class="fa fa-user-circle-o"></i> Log in</a>
@@ -55,12 +54,11 @@ include('includes/scripts.php');
                         <li>Create your own playlists </li>
                         <li>Follow artists to keep up to date </li>
                     </ul> 
-                    <a href="#">
+                    <a href="signup.php">
                         <button class="btn get-button">Get spotify free </button> 
                     </a>
                 </div>
             </div>
-
         </section>
 
         <section class="footer-sec">
@@ -79,7 +77,6 @@ include('includes/scripts.php');
                 </div>
             </div>
         </section>
-
     </body>
 </html>
 
