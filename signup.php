@@ -85,6 +85,9 @@ include('includes/handlers/register-handler.php');
                         <div class="form-group">
                             <input type="submit" value="Sign up" name="submit" class="btn si-btn"> 
                         </div>
+                        <div class="form-group si-alt">
+                            Already have an account? <a href="signin.php">Sign in here. </a> 
+                        </div>
                     </form>
                 </div>
             </div>
