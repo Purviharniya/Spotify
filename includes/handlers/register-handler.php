@@ -21,6 +21,9 @@ if(isset($_POST['sumbit']))
     $date=sanitizeFormInput($_POST['dobDate']);
     $month=sanitizeFormInput($_POST['dobMonth']);
     $year=sanitizeFormInput($_POST['dobYear']);
+    $tnc=isset($_POST['tnc']);
 }
+
+
 
 ?>

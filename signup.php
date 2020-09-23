@@ -74,7 +74,7 @@ include('includes/scripts.php');
                             </div>
                         </div>
                         <div class="form-check form-group">
-                            <input class="form-check-input" type="checkbox">
+                            <input class="form-check-input" type="checkbox" name='tnc'>
                             <label class="form-check-label">Accept our terms and conditions</label>
                         </div>
                         <div class="form-group">
