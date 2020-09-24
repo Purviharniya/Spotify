@@ -40,7 +40,7 @@ class Account{
     private function validateEmail($em) {
 
         if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
-            array_push($this->errorArray, "Email is invalid");
+            array_push($this->errorArray, Constants::$invalidEmail);
             return;
         }
 
@@ -50,12 +50,12 @@ class Account{
 
     private function validatePasswords($pw1,$pw2){
         if(!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pw1)){
-            array_push($this->errorArray, "Password should have 8-20 characters, atleast one Uppercase letter, atleast one number and atleast one special character!");
+            array_push($this->errorArray,Constants::$invalidCreatePassword);
             return;
         }
 
         if($pw1 != $pw2){
-            array_push($this->errorArray, "Your passwords don't match.");
+            array_push($this->errorArray, Constants::$passwordsNoMatch);
             return;
         }
 
@@ -63,19 +63,19 @@ class Account{
 
     private function validateProfileName($pn){
         if(strlen($pn) >25 || strlen($pn) < 3 ){
-            array_push($this->errorArray, "Profile name should must be between 3 and 25 characters.");
+            array_push($this->errorArray, Constants::$inavlidProfName);
             return;
         }
     }
 
     private function validateContact($no){
         if(strlen($no)!=10){
-            array_push($this->errorArray, "Contact number must have 10 digits only!");
+            array_push($this->errorArray,Constants::$contactLengthWrong);
             return;
         }
 
         if(!preg_match('/^[6-9]\d{9}$/', $no)){
-            array_push($this->errorArray, "Contact number must start with 6,7,8 or 9!");
+            array_push($this->errorArray,Constants::$contactStartWrong);
             return;
         }
 
@@ -84,22 +84,22 @@ class Account{
     private function validateDOB($d,$m,$y){
         if (!preg_match("/^[0-9]*$/",$y))
         {
-            array_push($this->errorArray,"Invalid Year");
+            array_push($this->errorArray,Constants::$invalidDOBYear);
             return;
         }
 
         if((($this->curr_year-$y) >= 100 ) || ($y>=$this->curr_year)){
-            array_push($this->errorArray, "Invalid Year");
+            array_push($this->errorArray, Constants::$invalidDOBYear);
             return;
         }
 
         if($m == '' || empty($m)){
-            array_push($this->errorArray, "Month is required");
+            array_push($this->errorArray,Constants::$invalidDOBMonth);
             return;
         }
 
         if(!checkdate($m,$d,$y)){
-            array_push($this->errorArray, "Invalid date of birth");
+            array_push($this->errorArray, Constants::$invalidDOBDate);
             return;
         }
 
@@ -107,7 +107,7 @@ class Account{
 
     private function validateTnC($tnc){
         if(empty($tnc) || $tnc==''){
-            array_push($this->errorArray, "Accept to the terms & conditions");
+            array_push($this->errorArray, Constants::$AcceptTnC);
             return;
         }
     }

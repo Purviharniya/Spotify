@@ -1,6 +1,7 @@
 <?php  
     include('includes/scripts.php');
     include('includes/classes/Account.php');
+    include('includes/classes/Constants.php');
 
     $account = new Account();
 
@@ -59,13 +60,13 @@
                         <div class="form-group">
                             <label for="InputEmail1">What's your email?</label>
                             <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" required>
-                            <?php echo $account->getError("Email is invalid"); ?>
+                            <?php echo $account->getError(Constants::$invalidEmail); ?>
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                             <label for="password1">Create a password: </label>
                             <input type="password" class="form-control si-in" id="password1" name="password1" aria-describedby="passwordHelp" required>
-                            <?php echo $account->getError( "Password should have 8-20 characters, atleast one Uppercase letter, atleast one number and atleast one special character!"); ?>
+                            <?php echo $account->getError(Constants::$invalidCreatePassword); ?>
                             <small id="passwordHelp" class="form-text text-muted">The password should contain:
                                 <ul>
                                     <li>8-20 Characters</li>
@@ -78,18 +79,18 @@
                         <div class="form-group">
                             <label for="password2">Confirm password: </label>
                             <input type="password" class="form-control si-in" id="password2" name="password2" required>
-                            <?php echo $account->getError("Your passwords don't match."); ?>
+                            <?php echo $account->getError(Constants::$passwordsNoMatch); ?>
                         </div>
                         <div class="form-group">
                             <label for="profileName">What should we call you? </label>
                             <input type="text" class="form-control si-in" id="profileName" name="profileName" required>
-                            <?php echo $account->getError("Profile name should must be between 3 and 25 characters."); ?>
+                            <?php echo $account->getError(Constants::$inavlidProfName); ?>
                         </div>
                         <div class="form-group">
                             <label for="contactNo">What is your contact number? </label>
                             <input type="text" class="form-control si-in" id="contactNo" name="contactNo" aria-describedby="contactNo" required>
-                            <?php echo $account->getError("Contact number must have 10 digits only!"); ?>
-                            <?php echo $account->getError("Contact number must start with 6,7,8 or 9!"); ?>
+                            <?php echo $account->getError(Constants::$contactLengthWrong); ?>
+                            <?php echo $account->getError(Constants::$contactStartWrong); ?>
                         </div>
                         <div class="form-group">
                             <label for="dob">What is your date of birth? </label>
@@ -112,14 +113,14 @@
                                 </select>
                                 <input type="text" class="form-control si-in col-md-3" name="dobYear" id="year" placeholder="Year" required>
                             </div>
-                            <?php echo $account->getError("Invalid Year"); ?>
-                            <?php echo $account->getError("Month is required"); ?>
-                            <?php echo $account->getError("Invalid date of birth"); ?>
+                            <?php echo $account->getError(Constants::$invalidDOBYear); ?>
+                            <?php echo $account->getError(Constants::$invalidDOBMonth); ?>
+                            <?php echo $account->getError(Constants::$invalidDOBDate); ?>
                         </div>
                         <div class="form-check form-group">
                             <input class="form-check-input" type="checkbox" name='tnc'>
                             <label class="form-check-label">Accept our terms and conditions</label>
-                            <?php echo $account->getError("Accept to the terms & conditions"); ?>
+                            <?php echo $account->getError(Constants::$AcceptTnC); ?>
                         </div>
                         <div class="form-group">
                             <button type="submit" name="registerBtn" class="btn si-btn"> SIGN UP </button>
