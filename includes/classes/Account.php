@@ -22,7 +22,7 @@ class Account{
 
         if(empty($this->errorArray)){
             //insert to db
-            return insertUserDetails($userEmail,$password1,$profileName,$contactNo,$date,$month,$year);
+            return $this->insertUserDetails($userEmail,$password1,$profileName,$contactNo,$date,$month,$year);
         }
         else{
             return false;
@@ -44,7 +44,9 @@ class Account{
         $profilePic="assets/images/profile-pics/profilepic.png";
         $date=date("Y-m-d");
 
-        
+        $result= mysqli_query($this->con, "INSERT INTO users VALUES ('','$pn','$em','$encryptPw','$cn','$dobd','$dobm','$doby','$date','$profilePic')");
+
+        return $result;
     }
 
     private function validateEmail($em) {

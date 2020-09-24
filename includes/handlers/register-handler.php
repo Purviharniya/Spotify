@@ -22,7 +22,7 @@ if(isset($_POST['registerBtn']))
 
     $success= $account->register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc);
 
-    if($success){
+    if($success==true){
         echo "<script type='text/javascript'>alert('Registered successfully!');</script>";
         header("Location: landing.php");
     }
