@@ -11,6 +11,7 @@ if(isset($_POST['loginBtn']))
 
     $result = $account->login($loginEmail,$loginPassword);
     if($result==true){
+        $_SESSION['userLoggedIn'] = $loginEmail;
         header("Location: landing.php");
     }
 }
