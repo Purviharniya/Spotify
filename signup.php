@@ -1,10 +1,40 @@
 <?php  
-include('includes/scripts.php');
-include('includes/classes/Account.php');
+    include('includes/scripts.php');
+    include('includes/classes/Account.php');
 
-$account = new Account();
+    $account = new Account();
 
-include('includes/handlers/register-handler.php');
+    include('includes/handlers/register-handler.php');
+?>
+
+<?php
+
+// function sanitizeFormInput($inputText)
+// {
+//     $inputText=trim($inputText);
+//     // $inputText=strip_tags($inputText);
+//     // $inputText=str_replace(" ","",$inputText);
+//     return $inputText;
+// }
+
+// $userEmail="hi";
+
+// if(isset($_POST['registerBtn']))
+// {
+//     $userEmail=$_POST['InputEmail1'];
+//     $password1=sanitizeFormInput($_POST['password1']);
+//     $password2=sanitizeFormInput($_POST['password2']);
+//     $profileName= sanitizeFormInput($_POST['profileName']);
+//     $contactNo=sanitizeFormInput($_POST['contactNo']);
+//     $date=sanitizeFormInput($_POST['dobDate']);
+//     $month=sanitizeFormInput($_POST['dobMonth']);
+//     $year=sanitizeFormInput($_POST['dobYear']);
+//     $tnc=isset($_POST['tnc']);
+
+//     echo $userEmail;
+
+// }
+
 ?>
 
 <html>
@@ -25,15 +55,17 @@ include('includes/handlers/register-handler.php');
                     <div class="row pb-4">
                         <h1 class="si-title"> Sign up </h1>    
                     </div>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="signup-form" autocomplete="off">
+                    <form method="POST" action="signup.php" class="signup-form" autocomplete="off">
                         <div class="form-group">
                             <label for="InputEmail1">What's your email?</label>
                             <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" required>
+                            <?php echo $account->getError("Email is invalid"); ?>
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                             <label for="password1">Create a password: </label>
                             <input type="password" class="form-control si-in" id="password1" name="password1" aria-describedby="passwordHelp" required>
+                            <?php echo $account->getError( "Password should have 8-20 characters, atleast one Uppercase letter, atleast one number and atleast one special character!"); ?>
                             <small id="passwordHelp" class="form-text text-muted">The password should contain:
                                 <ul>
                                     <li>8-20 Characters</li>
@@ -46,14 +78,18 @@ include('includes/handlers/register-handler.php');
                         <div class="form-group">
                             <label for="password2">Confirm password: </label>
                             <input type="password" class="form-control si-in" id="password2" name="password2" required>
+                            <?php echo $account->getError("Your passwords don't match."); ?>
                         </div>
                         <div class="form-group">
                             <label for="profileName">What should we call you? </label>
                             <input type="text" class="form-control si-in" id="profileName" name="profileName" required>
+                            <?php echo $account->getError("Profile name should must be between 3 and 25 characters."); ?>
                         </div>
                         <div class="form-group">
                             <label for="contactNo">What is your contact number? </label>
                             <input type="text" class="form-control si-in" id="contactNo" name="contactNo" aria-describedby="contactNo" required>
+                            <?php echo $account->getError("Contact number must have 10 digits only!"); ?>
+                            <?php echo $account->getError("Contact number must start with 6,7,8 or 9!"); ?>
                         </div>
                         <div class="form-group">
                             <label for="dob">What is your date of birth? </label>
@@ -74,16 +110,19 @@ include('includes/handlers/register-handler.php');
                                     <option value="11">November</option>
                                     <option value="12">December</option>
                                 </select>
-
                                 <input type="text" class="form-control si-in col-md-3" name="dobYear" id="year" placeholder="Year" required>
                             </div>
+                            <?php echo $account->getError("Invalid Year"); ?>
+                            <?php echo $account->getError("Month is required"); ?>
+                            <?php echo $account->getError("Invalid date of birth"); ?>
                         </div>
                         <div class="form-check form-group">
                             <input class="form-check-input" type="checkbox" name='tnc'>
                             <label class="form-check-label">Accept our terms and conditions</label>
+                            <?php echo $account->getError("Accept to the terms & conditions"); ?>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Sign up" name="submit" class="btn si-btn"> 
+                            <button type="submit" name="registerBtn" class="btn si-btn"> SIGN UP </button>
                         </div>
                         <div class="form-group si-alt">
                             Already have an account? <a href="signin.php">Sign in here. </a> 

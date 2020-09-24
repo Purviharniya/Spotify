@@ -157,4 +157,13 @@
         background-size: 10% 100% !important;
         margin: 0 !important;
     }
-  }
+}
+
+
+.error-msg{
+    color:red;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 2px;
+}

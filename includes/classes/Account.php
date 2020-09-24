@@ -4,12 +4,13 @@ class Account{
 
     private $errorArray;
 
+    private $curr_year;
     public function __construct(){
         $this->errorArray = array();
+        $this->curr_year  = date("Y");
     }
 
-    public function register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc){
-        echo "hello";
+    public function register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc){ 
         $this->validateEmail($userEmail);
         $this->validatePasswords($password1,$password2);
         $this->validateProfileName($profileName);
@@ -24,15 +25,27 @@ class Account{
         else{
             return false;
         }
+
     }
 
-    private function validateEmail($em){
-        if (!filter_var($em, FILTER_VALIDATE_EMAIL)) {
-            array_push($this->errorArray, "Enter a valid Email");
+    public function getError($error){
+        if(!in_array($error,$this->errorArray)){
+            $error="";
+        }
+        // print_r($this->errorArray);
+        return "<div class='error-msg'>$error</div>";
+        // return print_r($this->errorArray);
+    }
+
+    private function validateEmail($em) {
+
+        if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+            array_push($this->errorArray, "Email is invalid");
             return;
         }
 
-        //TODO: check if email already exists
+        //TODO: Check that username hasn't already been used
+
     }
 
     private function validatePasswords($pw1,$pw2){
@@ -75,8 +88,7 @@ class Account{
             return;
         }
 
-        $curr_year = date("Y");
-        if((($curr_year-$dob_year) >= 100 ) || ($dob_year>=$curr_year)){
+        if((($this->curr_year-$y) >= 100 ) || ($y>=$this->curr_year)){
             array_push($this->errorArray, "Invalid Year");
             return;
         }
@@ -86,7 +98,7 @@ class Account{
             return;
         }
 
-        if(!checkdate($dob_month,$dob_date,$dob_year)){
+        if(!checkdate($m,$d,$y)){
             array_push($this->errorArray, "Invalid date of birth");
             return;
         }
