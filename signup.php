@@ -69,6 +69,7 @@ function rememberInput($name){
                             <label for="InputEmail1">What's your email?</label>
                             <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" value="<?php rememberInput('InputEmail1'); ?>" required>
                             <?php echo $account->getError(Constants::$invalidEmail); ?>
+                            <?php echo $account->getError(Constants::$emailAlreadyRegistered); ?>
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">

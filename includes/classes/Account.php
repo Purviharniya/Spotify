@@ -58,6 +58,12 @@ class Account{
 
         //TODO: Check that email hasn't already been used
 
+        $checkEmailQuery= mysqli_query($this->con, "SELECT email from users where email= '$em'");
+        if(mysqli_num_rows($checkEmailQuery) !=0){
+            array_push($this->errorArray, Constants::$emailAlreadyRegistered);
+            return;
+        }
+
     }
 
     private function validatePasswords($pw1,$pw2){

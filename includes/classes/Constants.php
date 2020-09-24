@@ -12,6 +12,7 @@ class Constants{
     public static $invalidDOBMonth = "Month is required ";
     public static $invalidDOBDate = "Invalid date of birth ";
     public static $AcceptTnC =  "Please accept to the terms & conditions";
+    public statis $emailAlreadyRegistered = "This email is already registered.";
 
 }
 
