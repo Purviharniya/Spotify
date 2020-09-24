@@ -43,7 +43,7 @@
 }
 
 .home-background{
-    background-image: url('./assets/background.gif');
+    background-image: url('../images/home/background.gif');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     min-height: 100vh;

@@ -3,9 +3,11 @@
 class Account{
 
     private $errorArray;
-
     private $curr_year;
-    public function __construct(){
+    private $con;
+
+    public function __construct($con){
+        $this->con=$con;
         $this->errorArray = array();
         $this->curr_year  = date("Y");
     }
@@ -20,7 +22,7 @@ class Account{
 
         if(empty($this->errorArray)){
             //insert to db
-            return true;
+            return insertUserDetails($userEmail,$password1,$profileName,$contactNo,$date,$month,$year);
         }
         else{
             return false;
@@ -37,6 +39,14 @@ class Account{
         // return print_r($this->errorArray);
     }
 
+    private function insertUserDetails($em,$pw,$pn,$cn,$dobd,$dobm,$doby){
+        $encryptPw= md5($pw);
+        $profilePic="assets/images/profile-pics/profilepic.png";
+        $date=date("Y-m-d");
+
+        
+    }
+
     private function validateEmail($em) {
 
         if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
@@ -44,7 +54,7 @@ class Account{
             return;
         }
 
-        //TODO: Check that username hasn't already been used
+        //TODO: Check that email hasn't already been used
 
     }
 

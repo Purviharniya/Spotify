@@ -55,34 +55,34 @@
 }
 
 #InputEmail1{
-    background-image:url('./assets/email.png');
+    background-image:url('../images/signup/email.png');
 }
 
 #password1{
-    background-image:url('./assets/password1.png');
+    background-image:url('../images/signup/password1.png');
 }
 
 #password2{
-    background-image:url('./assets/password.png');
+    background-image:url('../images/signup/password.png');
 }
 
 #profileName{
-    background-image:url('./assets/profile.png');
+    background-image:url('../images/signup/profile.png');
 }
 
 #contactNo{
-    background-image:url('./assets/contact.png');
+    background-image:url('../images/signup/contact.png');
 }
 #date{
-    background-image:url('./assets/dob.png');
+    background-image:url('../images/signup/dob.png');
     background-size: 25% 100%;
 }
 #month{
-    background-image:url('./assets/month.png');
+    background-image:url('../images/signup/month.png');
     background-size: 25% 100%;
 }
 #year{
-    background-image:url('./assets/year.png');
+    background-image:url('../images/signup/year.png');
     background-size: 25% 100%;
 }
 

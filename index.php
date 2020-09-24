@@ -5,7 +5,7 @@ include('includes/scripts.php');
 <html>
     <head>
         <title>Spotify</title>
-        <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="assets/styles/home.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
@@ -13,7 +13,7 @@ include('includes/scripts.php');
         <section class="navigation bar">
             <nav class="navbar navbar-expand-lg py-4 home-navbar">
                 <div class="container">
-                    <a class="navbar-brand home-navbar-brand" href="/spotify/index.php"><img src="./styles/assets/logo.png" class="img-fluid" height="40" width="45"> Spotify</a>
+                    <a class="navbar-brand home-navbar-brand" href="/spotify/index.php"><img src="assets/images/home/logo.png" class="img-fluid" height="40" width="45"> Spotify</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#homenav" aria-controls="homenav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars" style="color:#e6e6ff"></span>
                     </button>

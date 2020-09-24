@@ -4,7 +4,7 @@
     include('includes/classes/Account.php');
     include('includes/classes/Constants.php');
 
-    $account = new Account();
+    $account = new Account($con);
 
     include('includes/handlers/register-handler.php');
 ?>
@@ -49,7 +49,7 @@ function rememberInput($name){
 <html>
     <head>
         <title>  Sign up </title>
-        <link rel='stylesheet' href="styles/signup.css" >
+        <link rel='stylesheet' href="assets/styles/signup.css" >
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
@@ -58,7 +58,7 @@ function rememberInput($name){
         <div class="background2">
             <div class="row background4">
                 <div class="col-12 col-md-6 background3">
-                    <img src="styles/assets/signup.gif" class="img-fluid d-block w-100 si-img">
+                    <img src="assets/images/signup/signup.gif" class="img-fluid d-block w-100 si-img">
                 </div>
                 <div class="col-12 col-md-6 px-5 py-5 form-col">
                     <div class="row pb-4">
