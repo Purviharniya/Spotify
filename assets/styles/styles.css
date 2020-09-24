@@ -1,0 +1,13 @@
+#nowPlayingBarContainer{
+    background-color: #282828;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    color: white;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+

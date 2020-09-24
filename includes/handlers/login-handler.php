@@ -10,7 +10,9 @@ if(isset($_POST['loginBtn']))
     //call login from accounts
 
     $result = $account->login($loginEmail,$loginPassword);
+    
     if($result==true){
+
         $_SESSION['userLoggedIn'] = $loginEmail;
         header("Location: landing.php");
     }
