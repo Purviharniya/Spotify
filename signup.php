@@ -36,6 +36,13 @@
 
 // }
 
+
+function rememberInput($name){
+    if(isset($_POST[$name])){
+        echo $_POST[$name];
+    }
+}
+
 ?>
 
 <html>
@@ -59,13 +66,13 @@
                     <form method="POST" action="signup.php" class="signup-form" autocomplete="off">
                         <div class="form-group">
                             <label for="InputEmail1">What's your email?</label>
-                            <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" required>
+                            <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" value="<?php rememberInput('InputEmail1'); ?>" required>
                             <?php echo $account->getError(Constants::$invalidEmail); ?>
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                             <label for="password1">Create a password: </label>
-                            <input type="password" class="form-control si-in" id="password1" name="password1" aria-describedby="passwordHelp" required>
+                            <input type="password" class="form-control si-in" id="password1" name="password1" aria-describedby="passwordHelp" value="<?php rememberInput('password1'); ?>" required>
                             <?php echo $account->getError(Constants::$invalidCreatePassword); ?>
                             <small id="passwordHelp" class="form-text text-muted">The password should contain:
                                 <ul>
@@ -78,24 +85,24 @@
                         </div>
                         <div class="form-group">
                             <label for="password2">Confirm password: </label>
-                            <input type="password" class="form-control si-in" id="password2" name="password2" required>
+                            <input type="password" class="form-control si-in" id="password2" name="password2" value="<?php rememberInput('password2'); ?>" required>
                             <?php echo $account->getError(Constants::$passwordsNoMatch); ?>
                         </div>
                         <div class="form-group">
                             <label for="profileName">What should we call you? </label>
-                            <input type="text" class="form-control si-in" id="profileName" name="profileName" required>
+                            <input type="text" class="form-control si-in" id="profileName" name="profileName" value="<?php rememberInput('profileName'); ?>" required>
                             <?php echo $account->getError(Constants::$inavlidProfName); ?>
                         </div>
                         <div class="form-group">
                             <label for="contactNo">What is your contact number? </label>
-                            <input type="text" class="form-control si-in" id="contactNo" name="contactNo" aria-describedby="contactNo" required>
+                            <input type="text" class="form-control si-in" id="contactNo" name="contactNo" value="<?php rememberInput('contactNo'); ?>"  required>
                             <?php echo $account->getError(Constants::$contactLengthWrong); ?>
                             <?php echo $account->getError(Constants::$contactStartWrong); ?>
                         </div>
                         <div class="form-group">
                             <label for="dob">What is your date of birth? </label>
                             <div class="row">
-                                <input type="text" class="form-control col-md-3 si-in" id="date" name="dobDate"  placeholder="Date" required>
+                                <input type="text" class="form-control col-md-3 si-in" id="date" name="dobDate"  placeholder="Date" value="<?php rememberInput('dobDate'); ?>" required>
                                 <select id="month" name="dobMonth" class="form-control si-in col-md-3 mx-3" id="month" required>
                                     <option value="">Month</option>
                                     <option value="01">January</option>
@@ -111,7 +118,7 @@
                                     <option value="11">November</option>
                                     <option value="12">December</option>
                                 </select>
-                                <input type="text" class="form-control si-in col-md-3" name="dobYear" id="year" placeholder="Year" required>
+                                <input type="text" class="form-control si-in col-md-3" name="dobYear" id="year" placeholder="Year" value="<?php rememberInput('dobYear'); ?>" required>
                             </div>
                             <?php echo $account->getError(Constants::$invalidDOBYear); ?>
                             <?php echo $account->getError(Constants::$invalidDOBMonth); ?>
