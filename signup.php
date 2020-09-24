@@ -1,5 +1,6 @@
 <?php  
     include('includes/scripts.php');
+    include('includes/config.php');
     include('includes/classes/Account.php');
     include('includes/classes/Constants.php');
 
@@ -72,7 +73,7 @@ function rememberInput($name){
                         </div>
                         <div class="form-group">
                             <label for="password1">Create a password: </label>
-                            <input type="password" class="form-control si-in" id="password1" name="password1" aria-describedby="passwordHelp" value="<?php rememberInput('password1'); ?>" required>
+                            <input type="password" class="form-control si-in" id="password1" name="password1" aria-describedby="passwordHelp" required>
                             <?php echo $account->getError(Constants::$invalidCreatePassword); ?>
                             <small id="passwordHelp" class="form-text text-muted">The password should contain:
                                 <ul>
@@ -85,7 +86,7 @@ function rememberInput($name){
                         </div>
                         <div class="form-group">
                             <label for="password2">Confirm password: </label>
-                            <input type="password" class="form-control si-in" id="password2" name="password2" value="<?php rememberInput('password2'); ?>" required>
+                            <input type="password" class="form-control si-in" id="password2" name="password2" required>
                             <?php echo $account->getError(Constants::$passwordsNoMatch); ?>
                         </div>
                         <div class="form-group">
