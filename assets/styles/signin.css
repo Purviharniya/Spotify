@@ -1,4 +1,4 @@
-.background1{
+.lo-background1{
     /* background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%); */
     background-color: #d4418e;
     background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
@@ -9,13 +9,13 @@
     justify-content: center;
 }
 
-.background2{
+.lo-background2{
     /* border: 1px solid black; */
     position: relative;
 }
 
-.background3{
-    background-color: #D4D9F7;
+.lo-background3{
+    background-color: #ED6B68;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,13 +23,17 @@
     border-top-left-radius: 30px;
 }
 
-.background4{
+.lo-background4{
     background-color: white;
     border-radius: 30px;
     box-shadow: 10px 10px 8px rgba(0, 0, 0,0.5);
 }
 
-.si-in{
+.lo-img{
+    border-radius: 20%;
+}
+
+.lo-in{
     width: 60%;
     border: none;
     border-bottom: 1px solid #FF6464 ;
@@ -41,49 +45,25 @@
 }
 
 
-.si-in:focus{
+.lo-in:focus{
     border: none;
     box-shadow: none;
     border-bottom: 3px solid black;
 }
 
-.si-title{
+.lo-title{
     color: #FF6464;
     text-shadow: 2px 2px #575962;
     text-transform: uppercase;
     font-weight: 700;
 }
 
-#InputEmail1{
+#SiEmail{
     background-image:url('../images/signup/email.png');
 }
 
-#password1{
+#SiPassword{
     background-image:url('../images/signup/password1.png');
-}
-
-#password2{
-    background-image:url('../images/signup/password.png');
-}
-
-#profileName{
-    background-image:url('../images/signup/profile.png');
-}
-
-#contactNo{
-    background-image:url('../images/signup/contact.png');
-}
-#date{
-    background-image:url('../images/signup/dob.png');
-    background-size: 25% 100%;
-}
-#month{
-    background-image:url('../images/signup/month.png');
-    background-size: 25% 100%;
-}
-#year{
-    background-image:url('../images/signup/year.png');
-    background-size: 25% 100%;
 }
 
 .row{
@@ -91,13 +71,17 @@
     margin-right: 0;
 }
 
-.signup-form label{
+.signin-form label{
     font-size: 1.3rem;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.si-btn{
+.lo-fo{
+    text-decoration: underline;
+}
+
+.lo-btn{
     background-color: #d4418e;
     background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
     color: white;
@@ -109,24 +93,24 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0,0.7);
 }
 
-.si-btn:hover{
+.lo-btn:hover{
     background-color:#FF6464 !important;
     background-image: none;
 }
 
-.si-alt{
+.lo-alt{
     font-size: 1.3rem;
 }
 
 @media only screen and (max-width:1024px){
-    .si-in{
+    .lo-in{
         background-size: 20% 100%;
     }
 }
 
 @media only screen and (max-width: 768px) { 
 
-    .background1{
+    .lo-background1{
         padding: 30px 20px;
 
         text-transform: uppercase;
@@ -137,28 +121,28 @@
         margin-left: 0;
         margin-right: 0;
     }
-    .form-col{
+    .lo-form-col{
         padding-left: 20px !important ;
     }
 
-    .background3{
+    .lo-background3{
         border-bottom-left-radius: 0;
         border-top-right-radius: 30px;
         
     }
 
-    .si-img{
+    .lo-img{
         height: 90%;
     }
 
-    .si-in{
+    .lo-in{
         width: 100%;
         padding-left: 11%;
         background-size: 10% 100% !important;
         margin: 0 !important;
     }
 
-    .si-alt{
+    .lo-alt{
         font-size: 1rem;
     }
 }

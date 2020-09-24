@@ -2,6 +2,7 @@
 
 class Constants{
     
+    //register error msgs
     public static $invalidEmail = "Email is invalid!";
     public static $invalidCreatePassword = "Password should have 8-20 characters, atleast one Uppercase letter, atleast one number and atleast one special character!";
     public static $passwordsNoMatch = "Your passwords don't match.";
@@ -12,7 +13,10 @@ class Constants{
     public static $invalidDOBMonth = "Month is required ";
     public static $invalidDOBDate = "Invalid date of birth ";
     public static $AcceptTnC =  "Please accept to the terms & conditions";
-    public statis $emailAlreadyRegistered = "This email is already registered.";
+    public static $emailAlreadyRegistered = "This email is already registered.";
+    
+    //login error msgs
+    public static $loginFailed = "Your email or password was incorrect";
 
 }
 

@@ -36,7 +36,7 @@ include('includes/scripts.php');
                             <a class="home-link nav-link" href="signup.php"><i class="fa fa-sign-in"></i> Sign up</a>
                         </li> 
                         <li class="nav-item">
-                            <a class="home-link nav-link" href="#"> <i class="fa fa-user-circle-o"></i> Log in</a>
+                            <a class="home-link nav-link" href="signin.php"> <i class="fa fa-user-circle-o"></i> Log in</a>
                         </li>
                         </ul>  
                     </div>

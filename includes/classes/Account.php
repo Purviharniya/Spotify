@@ -12,6 +12,19 @@ class Account{
         $this->curr_year  = date("Y");
     }
 
+    public function login($em,$pw){
+        $pw=md5($pw);
+        $query = mysqli_query($this->con, "SELECT * from users where email='$em' AND password='$pw'");
+
+        if(mysqli_num_rows($query)==1){
+            return true;
+        }
+        else{
+            array_push($this->errorArray, Constants::$loginFailed);
+            return false;
+        }
+    }
+
     public function register($userEmail,$password1,$password2,$profileName,$contactNo,$date,$month,$year,$tnc){ 
         $this->validateEmail($userEmail);
         $this->validatePasswords($password1,$password2);
