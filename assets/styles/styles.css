@@ -11,3 +11,39 @@
     margin-right: 0;
 }
 
+.controlButton{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    vertical-align: middle;
+}
+
+.controlButton:focus{
+    border: none;
+    outline: none;
+}
+
+.controlButton-container{
+    display: flex;
+    justify-content: center;
+}
+
+.controlButton img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.playbt-i, .pausebt-i{
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+}
+
+.progressTime{
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.progressbar{
+    width: 100%;
+    height: 10px;
+}

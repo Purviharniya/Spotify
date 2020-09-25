@@ -53,7 +53,7 @@
                                 <label class="form-check-label">Remember me</label>
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="loginBtn" class="btn lo-btn"> SIGN IN </button>
+                                <button type="submit" name="loginBtn" class="btn lo-btn" title="Sign in"> SIGN IN </button>
                             </div>
                             <div class="form-group lo-alt">
                                 Don't have an account? <a href="signup.php" class="lo-fo">Sign up here. </a> 

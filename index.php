@@ -55,7 +55,7 @@ include('includes/scripts.php');
                         <li>Follow artists to keep up to date </li>
                     </ul> 
                     <a href="signup.php">
-                        <button class="btn get-button">Get spotify free </button> 
+                        <button class="btn get-button" title="Sign Up Now">Get spotify free </button> 
                     </a>
                 </div>
             </div>

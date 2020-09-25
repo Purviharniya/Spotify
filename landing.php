@@ -19,19 +19,53 @@
 
 
     <body>
-        <div id="nowPlayingBarContainer">
+    <div class="main-container">
+        <div class="top-container">
+            <div class="navigation-container">
+            </div>
+            <div class="page-container">
+            </div>
+        </div>
+        <div id="nowPlayingBarContainer" style="height:150px">
             <div class="row nowPlayingBar">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-3">
                     img 
-                </div>
-                <div class="col-12 col-md-5">
-                    rangebar
+                </div> 
+                <div class="col-12 col-md-6 py-3 px-5 d-flex flex-column justify-content-center">
+                    <div class="controlButton-container text-center">
+                        <button class="controlButton shuffleButton" title="Shuffle button"> 
+                            <img src="assets/images/icons/shuffle.png" alt="shuffle" class="shufflebt-i">
+                        </button>
+                        <button class="controlButton previousButton" title="Previous button"> 
+                            <img src="assets/images/icons/previous.png" alt="previous" class="previousbt-i">
+                        </button>
+                        <button class="controlButton playButton" title="Play button"> 
+                            <img src="assets/images/icons/play.png" alt="play" class="playbt-i">
+                        </button>
+                        <button class="controlButton pauseButton" title="Pause button" style="display:none;"> 
+                            <img src="assets/images/icons/pause.png" alt="pause" class="pausebt-i">
+                        </button>
+                        <button class="controlButton nextButton" title="Next button"> 
+                            <img src="assets/images/icons/next.png" alt="next" class="nextbt-i">
+                        </button>
+                        <button class="controlButton repeatButton" title="Repeat button"> 
+                            <img src="assets/images/icons/repeat.png" alt="repeat" class="repeatbt-i">
+                        </button>
+                    </div>
+                    <div class="playBar-container d-flex">
+                        <span class="progressTime current"> 0.00 </span> 
+                        <div class="progressbar">
+                        
+                        </div>
+                        <span class="progressTime remaining"> 0.00 </span> 
+                    </div>
                 </div>
                 <div class="col-12 col-md-3">
                     options
                 </div>
             </div>
         </div>
-</body>
+    </div>        
+    </body>
 
 </html>

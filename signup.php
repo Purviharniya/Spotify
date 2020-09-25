@@ -132,7 +132,7 @@ function rememberInput($name){
                                 <?php echo $account->getError(Constants::$AcceptTnC); ?>
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="registerBtn" class="btn si-btn"> SIGN UP </button>
+                                <button type="submit" name="registerBtn" class="btn si-btn" title="Sign up"> SIGN UP </button>
                             </div>
                             <div class="form-group si-alt">
                                 Already have an account? <a href="signin.php">Sign in here. </a> 
