@@ -6,6 +6,10 @@
     color: white;
 }
 
+*{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
 .row{
     margin-left: 0;
     margin-right: 0;
@@ -53,4 +57,47 @@
     height: 0.4rem;
     width: 100%;
     border-radius: 3px;
+}
+
+.progressprogress{
+    background-color: #a0a0a0;
+    height: 0.4rem;
+    width: 0;
+    border-radius: 3px;
+}
+
+.playBar-container .progressbar{
+    margin-top: 8px;
+}
+
+.bar-left .albumArtwork{
+    height: 100%;
+    max-width:7rem;
+    margin-right: 15px ;
+    float: left;
+    background-size: cover;
+}
+
+.track-info{
+    display: table;
+}
+.trackname {
+    margin: 6px 0px;
+    display: inline-block;
+    width: 100%;  
+    font-size: 1.2rem;  
+}
+
+.artistname{
+    color: #a0a0a0;
+    font-size: 0.9rem !important;
+}
+
+.volume-bar .progressbar{
+    width: 200px;
+    margin-top: 10px;
+}
+
+.volume-bar{
+    margin: 0px auto;
 }
