@@ -52,12 +52,16 @@
                             <img src="assets/images/icons/repeat.png" alt="repeat" class="repeatbt-i">
                         </button>
                     </div>
-                    <div class="playBar-container d-flex">
-                        <span class="progressTime current"> 0.00 </span> 
+                    <div class="playBar-container d-flex justify-content-center">
+                        <span class="progressTime current pr-3"> 0.00 </span> 
+
                         <div class="progressbar">
-                        
+                            <div class="progressbar-bg">
+                                <div class="progressprogress"></div>
+                            </div>
                         </div>
-                        <span class="progressTime remaining"> 0.00 </span> 
+
+                        <span class="progressTime remaining pl-3"> 0.00 </span> 
                     </div>
                 </div>
                 <div class="col-12 col-md-3">
