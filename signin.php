@@ -39,17 +39,29 @@
                             </div>
                             <div class="form-group">
                                 <label for="SiEmail">Email:</label>
-                                <input type="email" class="form-control lo-in" id="SiEmail" name="LoEmail" value="<?php rememberInput('LoEmail');?>" required>
+                                <input type="email" class="form-control lo-in" id="SiEmail" name="LoEmail" value="<?php 
+                                if(isset($_COOKIE["member_login"])){
+                                    echo $_COOKIE["member_login"];
+                                 }
+                                 else{
+                                    rememberInput('LoEmail');
+                                 } 
+                                ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="SiPassword">Password: </label>
-                                <input type="password" class="form-control lo-in" id="SiPassword" name="LoPassword" required>
+                                <input type="password" class="form-control lo-in" id="SiPassword" name="LoPassword" value="<?php
+                                 if(isset($_COOKIE["member_password"])){
+                                   echo $_COOKIE["member_password"];
+                                }
+                                ?>"
+                                required>
                             </div>
                             <div class="form-group">
                                 <a href="#" class="lo-fo">Forgot your password? </a>
                             </div>
                             <div class="form-check form-group">
-                                <input class="form-check-input" type="checkbox" name='rem-me'>
+                                <input class="form-check-input" type="checkbox" name='rem-me' <?php if(isset($_COOKIE["member_login"])){?> checked <?php } ?>>
                                 <label class="form-check-label">Remember me</label>
                             </div>
                             <div class="form-group">
