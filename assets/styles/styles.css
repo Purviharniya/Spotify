@@ -101,3 +101,51 @@
 .volume-bar{
     margin: 0px auto;
 }
+
+.top-container{
+    min-height:100%;
+}
+
+.navigation-container{
+    background-color: #000;
+
+}
+/* 
+.sidebar-tog{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+} */
+
+.side-logo img{
+    width: 40px;
+}
+
+.group1{
+    border-top: 1px solid #a0a0a0;
+    padding: 10px 0;
+}
+
+.s-nav .nav-item{
+    padding: 10px 0;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    display: block;
+    position: relative;
+}
+
+.s-nav .nav-item .nav-link{
+    color: #a0a0a0;
+}
+
+.s-nav .nav-item .nav-link:hover{
+    color: #fff;
+}
+
+.ic-search{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 3rem;
+}

@@ -1,7 +1,7 @@
 .background1{
     /* background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%); */
     background-color: #d4418e;
-    background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+    background-image: linear-gradient(315deg, #000428 0%,  #004e92 64% , #0f80e4 100% );
     padding: 40px 150px;
     min-height: 100%;
     display: flex;

@@ -20,12 +20,47 @@
 
     <body>
     <div class="main-container">
-        <div class="top-container">
-            <div class="navigation-container">
+        <button class="navbar-toggler d-block d-md-none btn sidebar-tog" type="button" data-toggle="collapse" data-target="#sidebarnavbar" >
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <div class="d-flex flex-column  flex-md-row top-container">
+
+            <!-- (remove show and add it using js onclick button later) -->
+            <div class="collapse show navbar-collapse shadow col-md-2 col-12 navigation-container sidebarnavbar"  id="sidebarnavbar">
+                <div class="sidebar nav min-vh-100">
+                    <ul class="navbar-nav s-nav w-100 pt-5 px-2">
+                        <li class="nav-item">
+                            <a class="nav-link side-logo" href="landing.php"> <img src="assets/images/icons/logo.png"> </a>
+                        </li>
+
+                        <div class="group1">
+                            <li class="nav-item">
+                                <a class="nav-link" href="search.php"> Search 
+                                    <img src="assets/images/icons/search.png" alt="search" class="ic-search">
+                                </a>
+                            </li>
+                        </div>
+                        <div class="group1">
+                            <li class="nav-item">
+                                <a class="nav-link" href="browse.php"> Browse </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="yourmusic.php"> Your Music </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="user.php"> Purvi H </a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
             </div>
-            <div class="page-container">
+            <div class="col-12 col-md-10 page-container" style="background:red">
+                hi
             </div>
+            
         </div>
+
         <div id="nowPlayingBarContainer">
             <div class="row py-4 nowPlayingBar">
 
@@ -80,7 +115,7 @@
                 <div class="col-12 col-md-3 d-none d-md-block content align-self-center">
                     <div class="volume-bar d-flex justify-content-center">
 
-                        <button class='controlButton volumeButton' title="volume button">
+                        <button class='controlButton volumeButton' title="Volume button">
                             <img src="assets/images/icons/volume.png" alt="volume" class="volumebt-i">
                         </button>
 
