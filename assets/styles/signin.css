@@ -114,7 +114,6 @@
 }
 
 @media only screen and (max-width: 768px) { 
-
     .lo-background1{
         padding: 30px 20px;
         font-weight: 700;
@@ -124,6 +123,7 @@
         margin-left: 0;
         margin-right: 0;
     }
+    
     .lo-form-col{
         padding-left: 20px !important ;
     }
