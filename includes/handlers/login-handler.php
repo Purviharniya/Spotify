@@ -7,7 +7,7 @@ if(isset($_POST['loginBtn']))
     $loginEmail=$_POST['LoEmail'];
     $loginPassword=$_POST['LoPassword'];
 
-    //call login from accounts
+    //call login from accounts class
 
     $result = $account->login($loginEmail,$loginPassword);
     $loginvalid=false;
