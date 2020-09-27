@@ -149,3 +149,7 @@
     top: 5px;
     width: 3rem;
 }
+
+.sidebar-zz{
+    z-index: 3;
+}

@@ -20,14 +20,50 @@
 
     <body>
     <div class="main-container">
-        <button class="navbar-toggler d-block d-md-none btn sidebar-tog" type="button" data-toggle="collapse" data-target="#sidebarnavbar" >
+        <button class="navbar-toggler d-block d-md-none btn sidebar-tog" id="tog-nav" type="button" data-toggle="collapse" data-target="#sidebarnavbar" >
             <i class="fa fa-bars"></i>
         </button>
 
-        <div class="d-flex flex-column  flex-md-row top-container">
+        <!-- <script>
+            $(window).ready(function(){
+                if($(window).width()>=768){
+                    $(document).ready(function(){
+                        $(".sidebarnavbar").addClass("show");
+                    })
+                }
+            })
 
-            <!-- (remove show and add it using js onclick button later) -->
-            <div class="collapse show navbar-collapse shadow col-md-2 col-12 navigation-container sidebarnavbar"  id="sidebarnavbar">
+        </script> -->
+
+
+        <script>
+
+            $(document).ready(function(){
+                showNav();
+
+                $(window).resize(showNav);
+            });
+
+            function showNav(){
+                
+                if($(window).width()>=768){
+                    $(document).ready(function(){
+                        $(".sidebarnavbar").addClass("show");
+                        $(".sidebarnavbar").removeClass("sidebar-zz");
+                    })
+                }
+                if($(window).width()<768){
+                    $(document).ready(function(){
+                        $(".sidebarnavbar").removeClass("show");
+                        $(".sidebarnavbar").addClass("sidebar-zz");
+                    })
+                }
+            }
+
+        </script>
+
+        <div class="d-flex flex-column  flex-md-row top-container">
+            <div class="collapse navbar-collapse shadow col-md-2 col-12 navigation-container sidebarnavbar"  id="sidebarnavbar">
                 <div class="sidebar nav min-vh-100">
                     <ul class="navbar-nav s-nav w-100 pt-5 px-2">
                         <li class="nav-item">
