@@ -39,3 +39,4 @@ INSERT INTO artists VALUES(38,"James Arthur");
 INSERT INTO artists VALUES(39,"Calum Scott");
 INSERT INTO artists VALUES(40,"Kodaline");
 INSERT INTO artists VALUES(41,"PUBLIC");
+INSERT INTO artists VALUES (42,'Ali Gatie');
