@@ -26,6 +26,7 @@ function showNav(){
             $(".sidebarnavbar").addClass("show");
             $(".sidebarnavbar").removeClass("sidebar-zz");
         });
+        
     }
 
     if($(window).width()<768){
