@@ -25,15 +25,25 @@ function showNav(){
         $(document).ready(function(){
             $(".sidebarnavbar").addClass("show");
             $(".sidebarnavbar").removeClass("sidebar-zz");
-        })
+        });
     }
+
     if($(window).width()<768){
         $(document).ready(function(){
             $(".sidebarnavbar").removeClass("show");
             $(".sidebarnavbar").addClass("sidebar-zz");
-        })
+        });     
+
+        $(".navbar-toggler").click(()=>{
+        if($(".sidebarnavbar").hasClass("sidebarnavbar")){
+        $(".mainview-container").toggleClass("d-none");
+        }   
+    });
     }
+
+    
 }
+
 
 </script>
                 <div class="sidebar nav min-vh-100">

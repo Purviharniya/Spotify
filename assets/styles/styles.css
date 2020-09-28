@@ -1,3 +1,5 @@
+/* MUISC PLAYER */
+
 #nowPlayingBarContainer{
     background-color: #282828;
     bottom: 0;
@@ -5,58 +7,71 @@
     width: 100%;
     color: white;
 }
+
 *{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
+
 .row{
     margin-left: 0;
     margin-right: 0;
 }
+
 .controlButton{
     border: none;
     background-color: transparent;
     outline: none;
     vertical-align: middle;
 }
+
 .controlButton:focus{
     border: none;
     outline: none;
 }
+
 .controlButton-container{
     display: flex;
     justify-content: center;
 }
+
 .controlButton img{
     width: 1.5rem;
     height: 1.5rem;
 }
+
 .playbt-i, .pausebt-i{
     width: 2.5rem !important;
     height: 2.5rem !important;
 }
+
 .progressTime{
     color: #a0a0a0;
     font-size: 0.9rem;
 }
+
 .progressbar{
     width: 100%;
     height: 10px;
 }
+
 .progressbar-bg{
     background-color: #404040;
     height: 0.4rem;
     width: 100%;
     border-radius: 3px;
 }
+
 .progressprogress{
     background-color: #a0a0a0;
     height: 0.4rem;
     width: 0;
     border-radius: 3px;
 }
+
 .playBar-container .progressbar{
     margin-top: 8px;
 }
+
 .bar-left .albumArtwork{
     height: 100%;
     max-width:7rem;
@@ -64,52 +79,78 @@
     float: left;
     background-size: cover;
 }
+
 .track-info{
     display: table;
 }
+
 .trackname {
     margin: 6px 0px;
     display: inline-block;
     width: 100%;  
     font-size: 1.2rem;  
 }
+
 .artistname{
     color: #a0a0a0;
     font-size: 0.9rem !important;
 }
+
 .volume-bar .progressbar{
     width: 200px;
     margin-top: 10px;
 }
+
 .volume-bar{
     margin: 0px auto;
 }
+
+/* CONTAINERS */
+
 .top-container{
-    height:100%;
+    min-height:100%;
     background-color: #181818;
 }
 
 .mainview-container{
     padding-bottom: 130px;
     background-color: #181818;
+    color: #fff;
 }
 
 .navigation-container{
     background-color: #000;
 }
+
+@media only screen and (max-width:768px){
+    .main-container{
+        padding-top: 2%;
+        /* padding-bottom: 200px; */
+        background-color: #181818;
+    }
+    .mainview-container{
+        padding-bottom: 200px;
+    }
+}
+
+/* NAVBAR SIDEBAR */
+
 .sidebar-tog{
     padding:0.8rem;
     background-color: white;
     border-radius: 50%;
     margin-left:3%;
 } 
+
 .side-logo img{
     width: 40px;
 }
+
 .group1{
     border-top: 1px solid #a0a0a0;
     padding: 10px 0;
 }
+
 .s-nav .nav-item{
     padding: 10px 0;
     letter-spacing: 2px;
@@ -118,29 +159,43 @@
     display: block;
     position: relative;
 }
+
 .s-nav .nav-item .nav-link{
     color: #a0a0a0;
 }
+
 .s-nav .nav-item .nav-link:hover{
     color: #fff;
 }
+
 .ic-search{
     position: absolute;
     right: 0;
     top: 5px;
     width: 3rem;
 }
+
 .sidebar-zz{
     z-index: 3;
 }
 
-@media only screen and (max-width:768px){
-    .main-container{
-        padding-top: 2%;
-        padding-bottom: 200px;
-        background-color: #181818;
-    }
-    .mainview-container{
-        padding-bottom: 200px;
+@media only screen and (min-width:768px){
+    .sidebar{
+        position: fixed;
+        width: 15%;
     }
 }
+
+
+/* LANDING PAGE */
+
+.album-img{
+    width: 100%;
+}
+
+.album-links{
+    text-decoration: none;
+    color: #fff !important;
+}
+
+

@@ -28,5 +28,5 @@
         <div class="d-flex flex-column  flex-md-row top-container">
             
             <?php include('includes/navbarContainer.php'); ?>
-        
-            <div class="col-12 col-md-10 mainview-container">
+
+            <div class="col-12 col-md-10 mainview-container pages">
