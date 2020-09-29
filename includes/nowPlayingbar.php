@@ -28,6 +28,15 @@ function setTrack(trackID,newPlaylist,play){
         var track= JSON.parse(data);
         console.log(track);
         audioElement.setTrack(track.path);
+
+        $(".trackname span").text(track.title);
+        $(".albumlink img").attr("src", track.image);
+        $.post("includes/handlers/ajax/getArtistJson.php" , { artistID:track.artist} , function(artistinfo){
+            var artist=JSON.parse(artistinfo);
+            $(".artistname span").text(artist.name);
+        });
+
+
     });
 }
 
@@ -50,14 +59,14 @@ function pauseSong(){
 
                 <div class="col-12 col-md-3 bar-left content py-1">
                     <span class="albumlink">
-                        <img src="assets/images/albumimages/album1.jpg" class="albumArtwork">
+                        <img src="" class="albumArtwork">
                     </span>
                     <div class="track-info">
                         <span class="trackname">
-                            <span>Song Name </span>
+                            <span></span>
                         </span>
                         <span class="artistname">
-                            <span>Artist Name </span>
+                            <span></span>
                         </span>
                     </div>
                 </div> 

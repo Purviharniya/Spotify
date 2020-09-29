@@ -116,6 +116,8 @@
     padding-bottom: 130px;
     background-color: #181818;
     color: #fff;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .navigation-container{
@@ -125,10 +127,14 @@
 @media only screen and (max-width:768px){
     .main-container{
         padding-top: 2%;
+        padding-left: 0;
+        padding-right: 0;
         /* padding-bottom: 200px; */
         background-color: #181818;
     }
     .mainview-container{
+        padding-left: 1rem;
+        padding-right: 1rem;
         padding-bottom: 200px;
     }
 }
@@ -203,6 +209,10 @@
 .album-links{
     text-decoration: none;
     color: #fff !important;
+}
+
+.album-links:hover{
+    text-decoration: none;
 }
 
 .grid-view-item{
@@ -289,7 +299,7 @@
 }
 
 .tracklist-row .track-count{
-    width: 5%;
+    width: 8%;
     float: left;
 }
 
@@ -313,9 +323,8 @@
 }
 
 .tracklist-row .track-info{
-    width: 70%;
+    width: 75%;
     float: left;
-    overflow: hidden;
 }
 
 .tracklist-row .track-info span{
@@ -349,28 +358,15 @@
     margin-bottom: 1px ;
 }
 
-.tracklist-row .track-img{
-    width: 8%;
-    float: left;
-}
-
-.track-img img{
-    width:50px;
-    background-size: cover;
-}
-
 @media only screen and (max-width:768px){
-
     .tracklist-row .track-count{
         width: 12%;
     }
-    .tracklist-row .track-img{
-        width: 15%;
-    }
     .tracklist-row .track-info{
-        width: 53%;
+        width: 66%;
     }
     .tracklist-row .track-options{
-        width: 8%;
+        width: 10%;
+        text-align: left !important;
     }
 }
