@@ -266,7 +266,7 @@
   border: 1px solid;
   border-image-slice: 1;
   border-width: 5px;
-  border-image-source: linear-gradient(to right, #fff, #939393);
+  border-image-source: linear-gradient(to right, #fff, #939393,#fff);
 }
 
 .tracklist{

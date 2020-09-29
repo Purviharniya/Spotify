@@ -1,3 +1,48 @@
+<?php
+
+$songQ= mysqli_query($con, "SELECT id from songs ORDER BY RAND() LIMIT 10");
+$resultArray=array();
+
+while($row = mysqli_fetch_array($songQ)){
+    array_push($resultArray,$row['id']);
+}
+
+$jsonArray= json_encode($resultArray);
+
+?>
+
+<script>
+
+$(document).ready(function(){
+    currentPlaylist = <?php echo $jsonArray; ?>;
+    audioElement= new Audio();
+    setTrack(currentPlaylist[0],currentPlaylist,true);
+})
+
+console.log(<?php echo $jsonArray; ?> ); 
+
+function setTrack(trackID,newPlaylist,play){
+    audioElement.setTrack('assets/songs/Lover.mp3');
+
+    $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(data){
+        console.log(data);
+    });
+}
+
+function playSong(){
+    $(".controlButton.playButton").hide();
+    $(".controlButton.pauseButton").show();
+    audioElement.play();
+}
+
+function pauseSong(){
+    $(".controlButton.playButton").show();
+    $(".controlButton.pauseButton").hide();
+    audioElement.pause();
+}
+
+</script>
+
 <div id="nowPlayingBarContainer">
             <div class="row py-4 nowPlayingBar">
 
@@ -23,10 +68,10 @@
                         <button class="controlButton previousButton" title="Previous button"> 
                             <img src="assets/images/icons/previous.png" alt="previous" class="previousbt-i">
                         </button>
-                        <button class="controlButton playButton" title="Play button"> 
+                        <button class="controlButton playButton" title="Play button" onclick="playSong()"> 
                             <img src="assets/images/icons/play.png" alt="play" class="playbt-i">
                         </button>
-                        <button class="controlButton pauseButton" title="Pause button" style="display:none;"> 
+                        <button class="controlButton pauseButton" title="Pause button" style="display:none;" onclick="pauseSong()"> 
                             <img src="assets/images/icons/pause.png" alt="pause" class="pausebt-i">
                         </button>
                         <button class="controlButton nextButton" title="Next button"> 
