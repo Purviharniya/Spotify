@@ -1,6 +1,10 @@
 <?php
     include('includes/config.php');
     include('includes/scripts.php');
+    include('includes/classes/Artist.php');
+    include('includes/classes/Album.php');
+    include('includes/classes/Song.php');
+
     if(isset($_SESSION['userLoggedIn'])){
         $userLogedIn = $_SESSION['userLoggedIn'];
     }
@@ -8,6 +12,7 @@
     else{
         header("Location: signin.php");
     }
+    
 ?>
 
 
