@@ -40,9 +40,12 @@
                             <div class="form-group">
                                 <label for="SiEmail">Email:</label>
                                 <input type="email" class="form-control lo-in" id="SiEmail" name="LoEmail" value="<?php 
-                                if(isset($_COOKIE["member_login"])){
+                                
+                                if(isset($_COOKIE["member_login"]))
+                                {
                                     echo $_COOKIE["member_login"];
                                  }
+
                                  else{
                                     rememberInput('LoEmail');
                                  } 

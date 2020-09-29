@@ -67,8 +67,15 @@ function showNav(){
                             <li class="nav-item">
                                 <a class="nav-link" href="yourmusic.php"> Your Music </a>
                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="feedbackform.php"> Enter Feedback </a>
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="user.php"> Purvi H </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pages you viewed: <?php echo $_SESSION['ca']; ?> </a>
                             </li>
                         </div>
                     </ul>

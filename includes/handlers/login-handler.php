@@ -12,7 +12,8 @@ if(isset($_POST['loginBtn']))
     $result = $account->login($loginEmail,$loginPassword);
     $loginvalid=false;
 
-    if($result==true){
+    if($result==true)
+    {
         $loginvalid=true;
         $_SESSION['userLoggedIn'] = $loginEmail;
 
@@ -20,6 +21,7 @@ if(isset($_POST['loginBtn']))
             setcookie("member_login",$_POST["LoEmail"],time()+(10*365*24*60*60));
             setcookie("member_password",$_POST['LoPassword'],time()+(10*365*24*60*60));
         }
+
         else{
             if(isset($_COOKIE["member_login"])){
                 setcookie("member_login","");
@@ -31,9 +33,12 @@ if(isset($_POST['loginBtn']))
 
         header("Location: landing.php");
     }
-    else{
+
+    else
+    {
         $loginvalid=false;
     }
+    
 }
 
 ?>

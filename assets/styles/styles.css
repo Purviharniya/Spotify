@@ -152,7 +152,7 @@
 }
 
 .s-nav .nav-item{
-    padding: 10px 0;
+    padding: 2px 0;
     letter-spacing: 2px;
     font-weight: 700;
     font-size: 1.3rem;
@@ -184,13 +184,20 @@
         position: fixed;
         width: 15%;
     }
+
 }
 
 
 /* LANDING PAGE */
 
+.heading{
+    padding: 20px;
+    font-family: castellar;
+}
+
 .album-img{
     width: 100%;
+    border: 0.2px solid #fff;
 }
 
 .album-links{
@@ -198,4 +205,145 @@
     color: #fff !important;
 }
 
+.grid-view-item{
+    display: inline-block;
+    margin-right: 20px;
+    width: 29%;
+    max-width: 200px;
+    min-width: 150px;
+    height: 200px;
+}
 
+.grid-view-info {
+    font-weight: 300;
+    text-align: center;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width:768px){
+    .gridviewContainer{
+        padding: 0 !important;
+    }
+
+    .left-section,.right-section{
+        width:50% !important;
+    }
+}
+
+.left-section{
+    width: 30%;
+    float: left;
+    max-width: 250px;
+}
+
+.right-section{
+    width: 70%;
+    float: left;
+    padding: 5px 10px 5px 40px;
+    box-sizing: border-box;
+}
+
+.al-name{
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.al-artist-name{
+    color: #939393;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.al-songs{
+    color: #939393;
+    font-weight: 200;
+}
+
+.al-i{
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to right, #fff, #939393);
+}
+
+.tracklist{
+    padding: 0;
+}
+
+.tracklist-row{
+    padding: 10px 10px;
+    height: 73px;
+    border: 1px solid #282828;
+}
+
+.tracklist-row:hover{
+    background-color: #282828;
+}
+
+.tracklist-row span{
+    font-weight: 200;
+    color: #939393;
+}
+
+.tracklist-row .track-count{
+    width: 8%;
+    float: left;
+}
+
+.tracklist-row .track-count img{
+    width: 40px;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+.tracklist-row:hover .track-count img{
+    visibility: visible;
+}
+
+.tracklist-row .track-count span{
+    visibility: visible;
+}
+
+.tracklist-row:hover .track-count span{
+    visibility: hidden;
+}
+
+.tracklist-row .track-info{
+    width: 75%;
+    float: left;
+}
+
+.tracklist-row .track-info span{
+    display: block;
+}
+
+.tracklist-row .track-options{
+    width: 5%;
+    float: left;
+    text-align: right;
+}
+
+.tracklist-row .track-options img{
+    width: 35px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.tracklist-row:hover .track-options img{
+    visibility: visible;
+}
+
+.tracklist-row .track-duration{
+    width: 12%;
+    float: left;
+    text-align: right;
+}
+
+.track-info .track-name{
+    color: #fff;
+    margin-bottom: 1px ;
+}

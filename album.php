@@ -10,31 +10,52 @@ else{
 
 $album = new Album($con, $albumID);
 $artist = $album->getArtist();
-
-// echo $album->getAlbumName();
-// echo $artist->getArtistName();
-// echo $album->getNumberofSongs();
 ?>
 
-<div class="album-info row pt-5 -inline-block">
-    <div class="col-12 col-md-3">
-        <img src="<?php echo $album->getImage(); ?>" class="w-100 img-fluid">
+
+<div class="album-info w-100 pt-5 d-inline-block">
+    <div class="left-section">
+        <img src="<?php echo $album->getImage(); ?>" class="w-100 img-fluid al-i">
     </div>
-    <div class="col-12 col-md-9 px-5 pt-4">
+ 
+    <div class="right-section">
         <p class="al-name"> <?php echo $album->getAlbumName(); ?> </p>
-        <p class="al-artist-name"> <?php echo $artist->getArtistName(); ?> </p>
-        <p class="al-songs"> <?php echo $album->getNumberofSongs(); ?> songs </p>
+        <p class="al-artist-name"> By <?php echo $artist->getArtistName(); ?> </p>
+        <span class="al-songs"> <?php echo $album->getNumberofSongs(); ?> songs </span>
     </div>
 </div>
 
 
-<div class="track-list-container">
-    <ul>
+<div class="track-list-container pt-5">
+    <ul class="tracklist list-unstyled">
         <?php 
             $songIDArray= $album->getSongIDs();
-
+            $i=1;
             foreach($songIDArray as $songId){
-                echo $songId;
+                $albumsong = new Song($con, $songId);
+                $songartist = $albumsong->artist();
+
+                echo "
+                <li class='tracklist-row'>
+                    <div class='track-count'>
+                        <img class='play-s' src='assets/images/icons/play-white.png' alt='play'>
+                      <span class='track-no'>". $i . ".</span>
+                    </div>
+                    <div class='track-info'>
+                        <span class='track-name'>". $albumsong->title() . "</span>
+                        <span class='track-artist'>". $songartist->getArtistName() . "</span>
+                    </div>
+                    <div class='track-options'>
+                        <img src='assets/images/icons/more.png' alt='options' class='options-btn'>
+                    </div>
+                    <div class='track-duration'> 
+                        <span class='duration'> ". $albumsong->duration() . " </span>
+                    </div>
+                </li>
+                
+                ";
+
+                $i+=1;
             }
         ?>
     </ul>

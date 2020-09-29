@@ -4,12 +4,20 @@
     include('includes/classes/Artist.php');
     include('includes/classes/Album.php');
     include('includes/classes/Song.php');
-
+ 
     if(isset($_SESSION['userLoggedIn'])){
         $userLogedIn = $_SESSION['userLoggedIn'];
+        if(isset($_SESSION['ca']))
+        {
+        $_SESSION['ca']++;
+        }
+        else{
+            $_SESSION['ca']=1;
+        }
     }
 
     else{
+        $_SESSION['ca']=1;
         header("Location: signin.php");
     }
     
