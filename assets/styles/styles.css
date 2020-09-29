@@ -289,7 +289,7 @@
 }
 
 .tracklist-row .track-count{
-    width: 8%;
+    width: 5%;
     float: left;
 }
 
@@ -313,8 +313,9 @@
 }
 
 .tracklist-row .track-info{
-    width: 75%;
+    width: 70%;
     float: left;
+    overflow: hidden;
 }
 
 .tracklist-row .track-info span{
@@ -346,4 +347,30 @@
 .track-info .track-name{
     color: #fff;
     margin-bottom: 1px ;
+}
+
+.tracklist-row .track-img{
+    width: 8%;
+    float: left;
+}
+
+.track-img img{
+    width:50px;
+    background-size: cover;
+}
+
+@media only screen and (max-width:768px){
+
+    .tracklist-row .track-count{
+        width: 12%;
+    }
+    .tracklist-row .track-img{
+        width: 15%;
+    }
+    .tracklist-row .track-info{
+        width: 53%;
+    }
+    .tracklist-row .track-options{
+        width: 8%;
+    }
 }

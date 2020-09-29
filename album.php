@@ -41,6 +41,9 @@ $artist = $album->getArtist();
                         <img class='play-s' src='assets/images/icons/play-white.png' alt='play'>
                       <span class='track-no'>". $i . ".</span>
                     </div>
+                    <div class='track-img'>
+                            <img src='" . $albumsong->songimg()."'>
+                    </div>
                     <div class='track-info'>
                         <span class='track-name'>". $albumsong->title() . "</span>
                         <span class='track-artist'>". $songartist->getArtistName() . "</span>

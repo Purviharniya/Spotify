@@ -25,7 +25,9 @@ function setTrack(trackID,newPlaylist,play){
     audioElement.setTrack('assets/songs/Lover.mp3');
 
     $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(data){
-        console.log(data);
+        var track= JSON.parse(data);
+        console.log(track);
+        audioElement.setTrack(track.path);
     });
 }
 
