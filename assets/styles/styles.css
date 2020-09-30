@@ -59,6 +59,7 @@
     height: 0.4rem;
     width: 100%;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .progressprogress{
@@ -66,6 +67,7 @@
     height: 0.4rem;
     width: 0;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .playBar-container .progressbar{
