@@ -22,12 +22,11 @@ $(document).ready(function(){
 console.log(<?php echo $jsonArray; ?> ); 
 
 function setTrack(trackID,newPlaylist,play){
-    audioElement.setTrack('assets/songs/Lover.mp3');
 
     $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(data){
         var track= JSON.parse(data);
         console.log(track);
-        audioElement.setTrack(track.path);
+        audioElement.setTrack(track);
 
         $(".trackname span").text(track.title);
         $(".albumlink img").attr("src", track.image);
@@ -35,12 +34,15 @@ function setTrack(trackID,newPlaylist,play){
             var artist=JSON.parse(artistinfo);
             $(".artistname span").text(artist.name);
         });
-
-
     });
 }
 
 function playSong(){
+
+    if(audioElement.audio.currentTime==0){
+        $.post("includes/handlers/ajax/updatePlays.php", {songID: audioElement.currentlyPlaying.id } );
+    }
+
     $(".controlButton.playButton").hide();
     $(".controlButton.pauseButton").show();
     audioElement.play();
@@ -101,7 +103,7 @@ function pauseSong(){
                             </div>
                         </div>
 
-                        <span class="progressTime remaining pl-3"> 0.00 </span> 
+                        <span class="progressTime remaining pl-3"></span> 
                     </div>
                 </div>
 

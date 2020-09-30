@@ -68,7 +68,7 @@ function showNav(){
                                 <a class="nav-link" href="yourmusic.php"> Your Music </a>
                             </li>
                              <li class="nav-item">
-                                <a class="nav-link" href="feedbackform.php"> Enter Feedback </a>
+                                <a class="nav-link" href="feedback.php"> Feedback </a>
                             </li>
 
                             <li class="nav-item">

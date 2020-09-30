@@ -241,6 +241,10 @@
     .left-section,.right-section{
         width:50% !important;
     }
+    .grid-view-item{
+        min-width: 100px;
+        height: 150px;
+    }
 }
 
 .left-section{

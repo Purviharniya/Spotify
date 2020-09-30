@@ -1,6 +1,6 @@
-<?php include('includes/header.php'); 
-
-if(isset($_GET['id'])){
+<?php include('includes/header.php');
+ 
+if(isset($_GET['id'])){ 
     $albumID= $_GET['id'];
 }
 
