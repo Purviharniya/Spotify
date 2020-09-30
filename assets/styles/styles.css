@@ -373,4 +373,7 @@
         width: 10%;
         text-align: left !important;
     }
+    .feedback-form{
+        padding: 0 !important;
+    }
 }

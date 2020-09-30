@@ -95,11 +95,11 @@ function pauseSong(){
                         </button>
                     </div>
                     <div class="playBar-container d-flex justify-content-center pt-2">
-                        <span class="progressTime current pr-3"> 0.00 </span> 
+                        <span class="progressTime current pr-3">0:00</span> 
 
                         <div class="progressbar">
                             <div class="progressbar-bg">
-                                <div class="progressprogress"></div>
+                                <div class="progressprogress song"></div>
                             </div>
                         </div>
 
@@ -116,7 +116,7 @@ function pauseSong(){
 
                         <div class="progressbar">
                             <div class="progressbar-bg">
-                                <div class="progressprogress"></div>
+                                <div class="progressprogress volume"></div>
                             </div>
                         </div>
 
