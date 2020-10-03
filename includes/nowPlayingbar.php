@@ -15,16 +15,14 @@ $jsonArray= json_encode($resultArray);
 
 $(document).ready(function(){
 
+    var newPlaylist = <?php echo $jsonArray; ?>;
+    audioElement= new Audio();
+    setTrack(newPlaylist[0],newPlaylist,false);
+    updateVolumeProgressBar(audioElement.audio);
+
     $("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e){
         e.preventDefault();   //stop this for mobile devices
     });
-
-    currentPlaylist = <?php echo $jsonArray; ?>;
-    audioElement= new Audio();
-
-    setTrack(currentPlaylist[0],currentPlaylist,true);
-
-    updateVolumeProgressBar(audioElement.audio);
 
     // PROGRESS BAR IMPLEMENTATION
     $(".playBar-container .progressbar").mousedown(function(){
@@ -103,42 +101,8 @@ function nextSong(){
         currentIndex++;
     }
 
-    var SongtoPlay = currentPlaylist[currentIndex];
+    var SongtoPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
     setTrack(SongtoPlay, currentPlaylist, true);
-}
-
-function setTrack(trackID,newPlaylist,play){
-
-    if(newPlaylist!=currentPlaylist){
-        currentPlaylist=newPlaylist;
-        shufflePlaylist= currentPlaylist.slice();
-        shuffleSongArray(shufflePlaylist);
-    }
-
-    if(shuffle==true){
-        currentIndex= shufflePlaylist.indexOf(trackID);
-    }
-    else{
-        currentIndex= currentPlaylist.indexOf(trackID);
-    }
-    
-    pauseSong();
-
-    $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(data){
-
-        var track= JSON.parse(data);
-        console.log(track);
-
-        $(".trackname span").text(track.title);
-        $(".albumlink img").attr("src", track.image);
-        $.post("includes/handlers/ajax/getArtistJson.php" , { artistID:track.artist} , function(artistinfo){
-            var artist=JSON.parse(artistinfo);
-            $(".artistname span").text(artist.name);
-        });
-        audioElement.setTrack(track);
-        playSong(); //works only with browsers that support autoplay
-    });
-
 }
 
 function playSong(){
@@ -170,27 +134,63 @@ function setmute(){
 }
 
 function setshuffle(){
-    shuffle  = !shuffle ; 
+    shuffle  = !shuffle; 
     var image = shuffle ? "shuffle-active.png" :  "shuffle.png" ;
     $(".shufflebt-i").attr("src", "assets/images/icons/"+image);
 
     if(shuffle==true){
         //randomize the song array
         shuffleSongArray(shufflePlaylist);
+        currentIndex = shufflePlaylist.indexOf(audioElement.currentlyPlaying.id);
     }
     else{
         //de-randomize array and deactivate shuffle
+        currentIndex = currentPlaylist.indexOf(audioElement.currentlyPlaying.id);
     }
 }
 
 function shuffleSongArray(a){
     var j,x,i;
     for(i=a.length;i;i--){
-        j=Math.floor(Math.random*i);
+        j=Math.floor(Math.random()*i);
         x=a[i-1];
         a[i-1]=a[j];
         a[j]=x;
     }
+}
+
+function setTrack(trackID,newPlaylist,play){
+
+if(newPlaylist!=currentPlaylist){
+    currentPlaylist=newPlaylist;
+    shufflePlaylist= currentPlaylist.slice();
+    shuffleSongArray(shufflePlaylist);
+}
+
+if(shuffle==true){
+    currentIndex= shufflePlaylist.indexOf(trackID);
+}
+else{
+    currentIndex= currentPlaylist.indexOf(trackID);
+}
+
+pauseSong();
+
+$.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(data){
+
+    var track= JSON.parse(data);
+    console.log(track);
+
+    $(".trackname span").text(track.title);
+    $(".albumlink img").attr("src", track.image);
+    $.post("includes/handlers/ajax/getArtistJson.php" , { artistID:track.artist} , function(artistinfo){
+        var artist=JSON.parse(artistinfo);
+        $(".artistname span").text(artist.name);
+    });
+    audioElement.setTrack(track);
+    playSong(); //works only with browsers that support autoplay
+});
+
 }
 
 </script>
