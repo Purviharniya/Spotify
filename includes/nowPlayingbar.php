@@ -109,7 +109,19 @@ function nextSong(){
 
 function setTrack(trackID,newPlaylist,play){
 
-    currentIndex= currentPlaylist.indexOf(trackID);
+    if(newPlaylist!=currentPlaylist){
+        currentPlaylist=newPlaylist;
+        shufflePlaylist= currentPlaylist.slice();
+        shuffleSongArray(shufflePlaylist);
+    }
+
+    if(shuffle==true){
+        currentIndex= shufflePlaylist.indexOf(trackID);
+    }
+    else{
+        currentIndex= currentPlaylist.indexOf(trackID);
+    }
+    
     pauseSong();
 
     $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(data){
@@ -126,6 +138,7 @@ function setTrack(trackID,newPlaylist,play){
         audioElement.setTrack(track);
         playSong(); //works only with browsers that support autoplay
     });
+
 }
 
 function playSong(){
@@ -163,6 +176,7 @@ function setshuffle(){
 
     if(shuffle==true){
         //randomize the song array
+        shuffleSongArray(shufflePlaylist);
     }
     else{
         //de-randomize array and deactivate shuffle
@@ -170,7 +184,13 @@ function setshuffle(){
 }
 
 function shuffleSongArray(a){
-    
+    var j,x,i;
+    for(i=a.length;i;i--){
+        j=Math.floor(Math.random*i);
+        x=a[i-1];
+        a[i-1]=a[j];
+        a[j]=x;
+    }
 }
 
 </script>
