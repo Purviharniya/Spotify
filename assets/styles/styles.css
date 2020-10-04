@@ -74,6 +74,10 @@
     margin-top: 8px;
 }
 
+/* .bar-left{
+    padding-left: 2rem;
+} */
+
 .bar-left .albumArtwork{
     height: 100%;
     max-width:7rem;
@@ -175,7 +179,14 @@
 .s-nav .nav-item .nav-link:hover{
     color: #fff;
 }
-
+.s-nav .nav-item .nav-link:focus{
+    border: none;
+    outline: none;
+}
+.s-nav .nav-item .nav-link:active{
+    border: none;
+    outline: none;
+}
 .ic-search{
     position: absolute;
     right: 0;
@@ -215,6 +226,16 @@
 
 .album-links:hover{
     text-decoration: none;
+}
+
+.album-links:focus{
+    border: none;
+    outline: none;
+}
+
+.album-links:active{
+    border: none;
+    outline: none;
 }
 
 .grid-view-item{

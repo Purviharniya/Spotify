@@ -93,7 +93,7 @@ function rememberInput($name){
                             <div class="form-group">
                                 <label for="profileName">What should we call you? </label>
                                 <input type="text" class="form-control si-in" id="profileName" name="profileName" value="<?php rememberInput('profileName'); ?>" required>
-                                <?php echo $account->getError(Constants::$inavlidProfName); ?>
+                                <?php echo $account->getError(Constants::$invalidProfName); ?>
                             </div>
                             <div class="form-group">
                                 <label for="contactNo">What is your contact number? </label>

@@ -49,43 +49,44 @@ function showNav(){
 </script>
                 <div class="sidebar nav min-vh-100">
                     <ul class="navbar-nav s-nav w-100 pt-5 px-2">
-                        <li class="nav-item">
-                            <a class="nav-link side-logo" href="landing.php"> <img src="assets/images/icons/logo.png"> </a>
+                        <li class="nav-item" >
+                            <span role="link" tabindex="0" onclick="openPage('landing.php')"  class="nav-link side-logo py-3"> 
+                            <img src="assets/images/icons/logo.png"> 
+                        </span>
                         </li>
 
                         <div class="group1">
                             <li class="nav-item">
-                                <a class="nav-link" href="search.php"> Search 
-                                    <img src="assets/images/icons/search.png" alt="search" class="ic-search">
-                                </a>
+                                <span role="link" tabindex="0" onclick="openPage('search.php')"  class="nav-link"> Search 
+                                        <img src="assets/images/icons/search.png" alt="search" class="ic-search">
+                                </span>
                             </li>
                         </div>
                         <div class="group1">
                             <li class="nav-item">
-                                <a class="nav-link" href="browse.php"> Browse </a>
+                                <span role="link" tabindex="0" onclick="openPage('browse.php')" class="nav-link"> Browse </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="browse.php"> Artists </a>
+                                <span role="link" tabindex="0" onclick="openPage('artist_list.php')" class="nav-link"> Artists </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="browse.php"> Albums </a>
+                                <span role="link" tabindex="0" onclick="openPage('album_list.php')"  class="nav-link"> Albums </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="browse.php"> Genres </a>
+                                <span role="link" tabindex="0" onclick="openPage('genres_list.php')"  class="nav-link"> Genres </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="yourmusic.php"> Your Music </a>
+                                <span role="link" tabindex="0" onclick="openPage('yourmusic.php')"  class="nav-link"> Your Music </span>
                             </li>
                              <li class="nav-item">
-                                <a class="nav-link" href="feedback.php"> Feedback </a>
+                                <span role="link" tabindex="0" onclick="openPage('feedback.php')"  class="nav-link"> Feedback </span>
                             </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="user.php"> Purvi H </a>
-                            </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
+                                <span role="link" tabindex="0" onclick="openPage('user.php')"  class="nav-link"> Purvi H </span>
+                            </li> -->
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Pages you viewed: <?php echo $_SESSION['ca']; ?> </a>
-                            </li>
+                            </li> -->
                         </div>
                     </ul>
                 </div>

@@ -7,6 +7,7 @@
  
     if(isset($_SESSION['userLoggedIn'])){
         $userLogedIn = $_SESSION['userLoggedIn'];
+        echo "<script>userLoggedIn = '$userLogedIn'; </script>";
         if(isset($_SESSION['ca']))
         {
         $_SESSION['ca']++;
@@ -44,3 +45,4 @@
             <?php include('includes/navbarContainer.php'); ?>
 
             <div class="col-12 col-md-10 mainview-container pages">
+                <div id="main-content">

@@ -1,6 +1,8 @@
-</div>
+<!-- main-content  -->
+</div>  
+<!-- main-view comtainer -->
+    </div>  
             
-        </div>
 
         <?php include('includes/nowPlayingbar.php'); ?>
     </div>        

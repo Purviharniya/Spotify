@@ -188,7 +188,9 @@ $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(da
         $(".artistname span").text(artist.name);
     });
     audioElement.setTrack(track);
+    if(play==true){
     playSong(); //works only with browsers that support autoplay
+    }
 });
 
 }
@@ -198,7 +200,7 @@ $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(da
 <div id="nowPlayingBarContainer">
             <div class="row py-4 nowPlayingBar">
 
-                <div class="col-12 col-md-3 bar-left content py-1">
+                <div class="col-12 col-md-3 bar-left content py-1 pl-4">
                     <span class="albumlink">
                         <img src="" class="albumArtwork">
                     </span>

@@ -94,7 +94,7 @@ class Account{
 
     private function validateProfileName($pn){
         if(strlen($pn) >25 || strlen($pn) < 3 ){
-            array_push($this->errorArray, Constants::$inavlidProfName);
+            array_push($this->errorArray, Constants::$invalidProfName);
             return;
         }
     }

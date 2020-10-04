@@ -1,6 +1,6 @@
 <?php 
 
-include('includes/header.php'); 
+include('includes/included_files.php');
 
 if(!isset($_SESSION['feeds'])){
     $_SESSION['feeds']=0;
@@ -36,4 +36,3 @@ echo "
 <h5 class='float-right'> FEEDBACKS SUBMITTED: " . $_SESSION['feeds'] . " </h5>
 ";
 
-include('includes/footer.php'); ?>
