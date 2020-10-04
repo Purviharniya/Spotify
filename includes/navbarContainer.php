@@ -65,6 +65,15 @@ function showNav(){
                                 <a class="nav-link" href="browse.php"> Browse </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="browse.php"> Artists </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="browse.php"> Albums </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="browse.php"> Genres </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="yourmusic.php"> Your Music </a>
                             </li>
                              <li class="nav-item">

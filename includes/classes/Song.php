@@ -18,7 +18,6 @@ class Song{
 
         $query= mysqli_query($this->con, "SELECT * FROM songs WHERE id= ' $this->id '");
         $this->mysqli_data= mysqli_fetch_array($query);
-
         $this->title= $this->mysqli_data['title'];
         $this->artistid= $this->mysqli_data['artist'];
         $this->albumid= $this->mysqli_data['album'];
@@ -30,6 +29,9 @@ class Song{
 
     public function title(){
         return $this->title;
+    }
+    public function songID(){
+        return $this->id;
     }
     public function artist(){
         return new Artist($this->con,$this->artistid);
