@@ -86,3 +86,13 @@ function Audio(){
         this.audio.currentTime = seconds;
     }
 }
+
+
+function logout(){
+    $.post("includes/handlers/ajax/logout.php", function(){
+        location.reload();
+        window.location.href = "index.php";
+    });
+
+
+}

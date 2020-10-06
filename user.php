@@ -1,14 +1,17 @@
 <?php 
- include('includes/header.php'); 
-
- if(isset($_SESSION['userLoggedIn'])){
-    session_unset();
-    session_destroy();
-    echo "<script type='text/javascript'>alert('Logged out successfully!');</script>";
-    header("Location: index.php");
-
-}
-
- include('includes/footer.php');
-
+ include('includes/included_files.php');
 ?>
+
+<div class="entityInfo container text-center">
+    <div class="centersection">
+        <div class="userInfo text-left">
+            <h3 class="py-2">Email:   <span><?php echo $userLoggedIn->getEmail();  ?></span></h3>
+            <h3 class="py-2">Profile Name:   <span><?php echo $userLoggedIn->getProfileName();  ?></span></h3>
+            <h3 class="py-2">Conatct No:   <span><?php echo $userLoggedIn->getContactNo();  ?></span></h3>
+        </div>
+    </div>
+    <div class="buttonItems d-inline-flex flex-column">
+        <button class="user-buttons" onclick="openPage('updateDetails.php')">USER DETAILS </button>
+        <button class="user-buttons" onclick="logout()"> LOGOUT </button>  
+    </div>
+</div>

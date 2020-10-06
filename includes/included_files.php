@@ -4,9 +4,18 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
     // echo "came from ajax";
     include('includes/config.php');
     include('includes/scripts.php');
+    include("includes/classes/User.php");
     include('includes/classes/Artist.php');
     include('includes/classes/Album.php');
     include('includes/classes/Song.php');
+
+    if(isset($_SESSION['userLoggedIn'])) {
+        $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+    }
+    else {
+		echo "Username variable was not passed into page. Check the openPage JS function";
+		exit();
+	}
 }
 else{
     include('includes/header.php');

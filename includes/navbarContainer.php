@@ -67,13 +67,13 @@ function showNav(){
                                 <span role="link" tabindex="0" onclick="openPage('browse.php')" class="nav-link"> Browse </span>
                             </li>
                             <li class="nav-item">
-                                <span role="link" tabindex="0" onclick="openPage('artist_list.php')" class="nav-link"> Artists </span>
+                                <span role="link" tabindex="0" onclick="openPage('artists.php')" class="nav-link"> Artists </span>
                             </li>
                             <li class="nav-item">
-                                <span role="link" tabindex="0" onclick="openPage('album_list.php')"  class="nav-link"> Albums </span>
+                                <span role="link" tabindex="0" onclick="openPage('albums.php')"  class="nav-link"> Albums </span>
                             </li>
                             <li class="nav-item">
-                                <span role="link" tabindex="0" onclick="openPage('genres_list.php')"  class="nav-link"> Genres </span>
+                                <span role="link" tabindex="0" onclick="openPage('genres.php')"  class="nav-link"> Genres </span>
                             </li>
                             <li class="nav-item">
                                 <span role="link" tabindex="0" onclick="openPage('yourmusic.php')"  class="nav-link"> Your Music </span>
@@ -81,9 +81,9 @@ function showNav(){
                              <li class="nav-item">
                                 <span role="link" tabindex="0" onclick="openPage('feedback.php')"  class="nav-link"> Feedback </span>
                             </li>
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <span role="link" tabindex="0" onclick="openPage('user.php')"  class="nav-link"> Purvi H </span>
-                            </li> -->
+                            </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Pages you viewed: <?php echo $_SESSION['ca']; ?> </a>
                             </li> -->

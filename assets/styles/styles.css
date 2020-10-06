@@ -155,7 +155,7 @@
 } 
 
 .side-logo img{
-    width: 40px;
+    width: 50px;
 }
 
 .group1{
@@ -399,4 +399,48 @@
     .feedback-form{
         padding: 0 !important;
     }
+}
+
+
+
+/* LOGOUT PAGE*/
+
+.userInfo{
+    padding-top: 15%;
+    padding-bottom: 5%;
+}
+
+.user-buttons{
+    background-color: #181818;
+    color: white;
+    border: 2px double white;
+    margin:5px;
+    padding: 1rem 4rem;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: castellar;
+}
+
+.user-buttons:hover{
+    background-image: linear-gradient(to right, #4e4e4e,#2c2c2c ,#202020);;
+}
+
+.userInfo h3{
+    border: 1px solid #4e4e4e;
+    padding-left: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.userInfo h3:hover{
+    background-color: #4e4e4e;
+}
+
+.userInfo h3 span{
+    padding-left: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
 }
