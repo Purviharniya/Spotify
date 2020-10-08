@@ -82,7 +82,7 @@ function showNav(){
                                 <span role="link" tabindex="0" onclick="openPage('feedback.php')"  class="nav-link"> Feedback </span>
                             </li>
                             <li class="nav-item">
-                                <span role="link" tabindex="0" onclick="openPage('user.php')"  class="nav-link"> Purvi H </span>
+                                <span role="link" tabindex="0" onclick="openPage('user.php')"  class="nav-link"> Account </span>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Pages you viewed: <?php echo $_SESSION['ca']; ?> </a>

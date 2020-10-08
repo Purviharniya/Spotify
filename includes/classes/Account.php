@@ -20,6 +20,11 @@ class Account{
             return true;
         }
         else{
+            $q=mysqli_query($this->con, "SELECT * from users where email='$em'");
+            if(mysqli_num_rows($q)!=1){
+                array_push($this->errorArray, Constants::$pleaseSignup);
+                return false;
+            }
             array_push($this->errorArray, Constants::$loginFailed);
             return false;
         }
@@ -56,8 +61,8 @@ class Account{
         $encryptPw= md5($pw);
         $profilePic="assets/images/profile-pics/profilepic.png";
         $date=date("Y-m-d");
-
-        $result= mysqli_query($this->con, "INSERT INTO users VALUES ('','$pn','$em','$encryptPw','$cn','$dobd','$dobm','$doby','$date','$profilePic')");
+        $token = bin2hex(random_bytes(20));
+        $result= mysqli_query($this->con, "INSERT INTO users VALUES ('','$pn','$em','$encryptPw','$cn','$dobd','$dobm','$doby','$date','$profilePic','$token')");
 
         return $result;
     }

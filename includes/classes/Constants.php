@@ -14,7 +14,8 @@ class Constants{
     public static $invalidDOBDate = "Invalid date of birth ";
     public static $AcceptTnC =  "Please accept to the terms & conditions";
     public static $emailAlreadyRegistered = "This email is already registered.";
-    
+    public static $pleaseSignup = "Account not found. Please Signup!";
+
     //login error msgs
     public static $loginFailed = "Your email or password was incorrect";
 

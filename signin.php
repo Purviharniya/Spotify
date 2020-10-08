@@ -36,6 +36,7 @@
                         <form method="POST" action="signin.php" class="signin-form" autocomplete="off">
                             <div class="form-group">
                                 <?php echo $account->getError(Constants::$loginFailed); ?>
+                                <?php echo $account->getError(Constants::$pleaseSignup); ?>
                             </div>
                             <div class="form-group">
                                 <label for="SiEmail">Email:</label>
@@ -61,7 +62,7 @@
                                 required>
                             </div>
                             <div class="form-group">
-                                <a href="#" class="lo-fo">Forgot your password? </a>
+                                <a href="forgotpass.php" class="lo-fo">Forgot your password? </a>
                             </div>
                             <div class="form-check form-group">
                                 <input class="form-check-input" type="checkbox" name='rem-me' <?php if(isset($_COOKIE["member_login"])){?> checked <?php } ?>>

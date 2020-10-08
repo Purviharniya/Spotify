@@ -7,8 +7,14 @@ var currentIndex=0;
 var repeat=false;
 var shuffle = false;
 var userLoggedIn='';
+var timer;
 
 function openPage(url){
+
+    if(timer != null){
+        clearTimeout(timer);
+    }
+
     if(url.indexOf('?')==-1){
         url = url + '?';
     }
@@ -17,6 +23,7 @@ function openPage(url){
     $("#main-content").load(encodedUrl);
     $("body").scrollTop(0);
     history.pushState(null,null,url);
+
 }
 
 function formatTime(seconds){
@@ -27,7 +34,7 @@ function formatTime(seconds){
     var extra_zero = (seconds_rem<10) ? "0":"";
 
     return minutes + ":" + extra_zero + seconds_rem;
-}
+} 
 
 function updateProgressTime(song){
 
@@ -38,6 +45,10 @@ function updateProgressTime(song){
 
     $(".progressprogress.song").css("width", progress+"%");
 
+}
+
+function playFirstSong(){
+    setTrack(tempPlaylist[0],tempPlaylist,true);
 }
 
 function updateVolumeProgressBar(audio){
@@ -51,14 +62,13 @@ function Audio(){
     this.audio.addEventListener('canplay', function(){
 
         var duration= formatTime(this.duration);
-        $(".progressTime.remaining").text(duration);
+        $(".progressTime.remaining").text(duration); 
 
     });
 
     this.audio.addEventListener("timeupdate", function(){
 
         updateProgressTime(this);
-
     });
 
     this.audio.addEventListener("volumechange", function(){

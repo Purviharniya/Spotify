@@ -8,7 +8,7 @@ include("includes/included_files.php");
 
 <?php 
 
-    $albumQuery = mysqli_query($con, "SELECT * from albums ORDER BY RAND() LIMIT 15");
+    $albumQuery = mysqli_query($con, "SELECT * from artists");
 
     while($row= mysqli_fetch_array($albumQuery)){
         echo "<span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")' class='album-links'>

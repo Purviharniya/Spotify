@@ -12,7 +12,6 @@ $jsonArray= json_encode($resultArray);
 ?>
 
 <script>
-
 $(document).ready(function(){
 
     var newPlaylist = <?php echo $jsonArray; ?>;
@@ -182,11 +181,18 @@ $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(da
     console.log(track);
 
     $(".trackname span").text(track.title);
+    $(".trackname span").attr("onclick", "openPage('album.php?id=" + track.album + "')");
+
     $(".albumlink img").attr("src", track.image);
+    $(".albumlink img").attr("onclick", "openPage('album.php?id=" + track.album + "')");
+
+
     $.post("includes/handlers/ajax/getArtistJson.php" , { artistID:track.artist} , function(artistinfo){
         var artist=JSON.parse(artistinfo);
         $(".artistname span").text(artist.name);
+        $(".artistname span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
     });
+
     audioElement.setTrack(track);
     if(play==true){
     playSong(); //works only with browsers that support autoplay
@@ -202,14 +208,14 @@ $.post("includes/handlers/ajax/getSongJson.php" , {songID:trackID} , function(da
 
                 <div class="col-12 col-md-3 bar-left content py-1 pl-4">
                     <span class="albumlink">
-                        <img src="" class="albumArtwork">
+                        <img src="" class="albumArtwork" role="link" tabindex="0">
                     </span>
                     <div class="track-info">
                         <span class="trackname">
-                            <span></span>
+                            <span role="link" tabindex="0"></span>
                         </span>
                         <span class="artistname">
-                            <span></span>
+                            <span role="link" tabindex="0"></span>
                         </span>
                     </div>
                 </div> 

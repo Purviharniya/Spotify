@@ -10,6 +10,7 @@ else{
 
 $album = new Album($con, $albumID);
 $artist = $album->getArtist();
+$artistId = $artist->getArtistID();
 ?>
 
 
@@ -20,10 +21,10 @@ $artist = $album->getArtist();
  
     <div class="right-section">
         <p class="al-name"> <?php echo $album->getAlbumName(); ?> </p>
-        <p class="al-artist-name"> By <?php echo $artist->getArtistName(); ?> </p>
+        <p class="al-artist-name" role='link' tabindex='0' onclick="openPage('artist.php?id= <?php echo $artistId;?>')"> By <?php echo $artist->getArtistName(); ?> </p>
         <span class="al-songs"> <?php echo $album->getNumberofSongs(); ?> songs </span>
     </div>
-</div>
+</div>  
 
 
 <div class="track-list-container pt-5">
@@ -44,7 +45,7 @@ $artist = $album->getArtist();
                    
                     <div class='track-info'>
                         <span class='track-name'>". $albumsong->title() . "</span>
-                        <span class='track-artist'>". $songartist->getArtistName() . "</span>
+                        <span class='track-artist' role='link' tabindex='0' onclick= openPage(\"artist.php?id=" . $albumsong->artistID() . "\")>". $songartist->getArtistName() . "</span>
                     </div>
                     <div class='track-options'>
                         <img src='assets/images/icons/more.png' alt='options' class='options-btn'>

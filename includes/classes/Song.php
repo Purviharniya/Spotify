@@ -36,6 +36,9 @@ class Song{
     public function artist(){
         return new Artist($this->con,$this->artistid);
     }
+    public function artistID(){
+        return $this->artistid;
+    }
     public function album(){
         return new Album($this->con,$this->albumid);
     }
