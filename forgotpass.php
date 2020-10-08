@@ -1,7 +1,11 @@
 <?php
-
+use PHPMailer\PHPMailer\PHPMailer; 
+use PHPMailer\PHPMailer\Exception; 
+require 'vendor/autoload.php'; 
 include('includes/scripts.php');
 include('includes/config.php');
+
+$mail = new PHPMailer(true); 
 
 $msg="";
 if(isset($_POST['token-btn']))
@@ -16,7 +20,38 @@ if(isset($_POST['token-btn']))
         $query2= mysqli_query($con, "SELECT token from users where email='$emailID'");
         while($row = mysqli_fetch_array($query2)){
         $token= $row['token'];
-        $msg=  "your token is:" .$token ;
+        $msg=  "Use this token to reset your pasword : <br>" .$token ;
+
+  
+        try { 
+            $mail->SMTPDebug = 2;                                        
+            $mail->isSMTP();                                             
+            $mail->Host       = 'smtp.gfg.com;';                     
+            $mail->SMTPAuth   = true;                              
+            $mail->Username   = 'user@gfg.com';                  
+            $mail->Password   = 'password';                         
+            $mail->SMTPSecure = 'tls';                               
+            $mail->Port       = 587;   
+        
+            $mail->setFrom('atharvakitkaru01@gmail.com', 'Aharva');            
+            $mail->addAddress($emailID); 
+            // $mail->addAddress('receiver2@gfg.com', 'Name'); 
+            
+            $mail->isHTML(true);                                   
+            $mail->Subject = 'Token for forgot password'; 
+            $mail->Body    = $msg ; 
+            //$mail->AltBody = 'Body in plain text for non-HTML mail clients'; 
+            $mail->send(); 
+            echo "Mail has been sent successfully!"; 
+        } 
+        catch (Exception $e) { 
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; 
+        } 
+        
+
+
+
+
         // $headers = "From: spotify@spotify.com";
         // mail($emailID, $subject, $msg, $headers);
         //echo "<script>alert('email has been sent);</script>";
