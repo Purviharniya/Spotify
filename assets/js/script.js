@@ -70,6 +70,21 @@ function createPlaylist(){
     }
 }
 
+function deletePlaylist(id){
+    var prompt=confirm("Are you sure you want to delete this playlist?");
+    if(prompt==true){
+        //ajax call to delete playlist
+        $.post("includes/handlers/ajax/deletePlaylist.php", {playlistID:id}).done(function(error){
+            // console.log(userLoggedIn);
+            if(error!=""){
+                alert(error);
+                return;
+            }
+            openPage("yourmusic.php");
+        });
+    }
+}
+
 
 function formatTime(seconds){
     var time=Math.round(seconds);
