@@ -1,8 +1,8 @@
 <?php
-require('vendor/autoload.php');
-include('includes/scripts.php');
-include('includes/config.php');
-include('includes/handlers/setnewpass.php');
+require 'vendor/autoload.php';
+include 'includes/scripts.php';
+include 'includes/config.php';
+include 'includes/handlers/setnewpass.php';
 
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -98,7 +98,7 @@ if (isset($_POST['token-btn'])) {
                     <div class="row py-4">
                         <h1 class="fo-title"> RESET PASSWORD</h1>
                     </div>
-                
+
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="fo-form" autocomplete="off">
                         <div class="form-group">
                             <label for="FoEmail">Email:</label>
@@ -108,7 +108,7 @@ if (isset($_POST['token-btn'])) {
                             <label for="FoToken">Token:</label>
                             <input type="text" class="form-control fo-in" id="FoToken" name="token" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="FoPassword">New Password:</label>
                             <input type="password" class="form-control fo-in" id="FoPassword" name="pass1" aria-describedby="passwordHelp" required>
@@ -121,12 +121,12 @@ if (isset($_POST['token-btn'])) {
                                     </ul>
                             </small>
                         </div>
-                        <div class='error-msg'><?php echo $pass1Er;?></div>
+                        <div class='error-msg'><?php echo $pass1Er; ?></div>
                         <div class="form-group">
                             <label for="FoPassword">Re-enter Password:</label>
                             <input type="password" class="form-control fo-in" id="FoPassword" name="pass2" required>
                         </div>
-                        <div class='error-msg'><?php echo $pass2Er;?></div>
+                        <div class='error-msg'><?php echo $pass2Er; ?></div>
                         <div class="form-group">
                             <button type="submit" name="pass-btn" class="btn fo-btn" title="Sign in"> RESET
                             </button>

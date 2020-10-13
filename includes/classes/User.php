@@ -21,6 +21,12 @@ class User
         return $row['profilepic'];
     }
 
+    public function getPassword(){
+        $query=mysqli_query($this->con,"SELECT password from users where email='$this->email'");
+        $row=mysqli_fetch_array($query);
+        return $row['password'];
+    }
+
     public function getProfileName(){
         $query=mysqli_query($this->con,"SELECT profilename from users where email='$this->email'");
         $row=mysqli_fetch_array($query);

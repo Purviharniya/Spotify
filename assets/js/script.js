@@ -2,37 +2,38 @@ var currentPlaylist = [];
 var shufflePlaylist = [];
 var tempPlaylist = [];
 var audioElement;
-var mousedown=false;
-var currentIndex=0;
-var repeat=false;
+var mousedown = false;
+var currentIndex = 0;
+var repeat = false;
 var shuffle = false;
 var userLoggedIn;
 var timer;
 
-function openPage(url){
+function openPage(url) {
 
-    if(timer != null){
+    if (timer != null) {
         clearTimeout(timer);
     }
-    if(url!= undefined){
-    if(url.indexOf('?')==-1){
-        url = url + '?';
-    }}
+    if (url != undefined) {
+        if (url.indexOf('?') == -1) {
+            url = url + '?';
+        }
+    }
 
     var encodedUrl = encodeURI(url + '&userLoggedIn=' + userLoggedIn);
     $("#main-content").load(encodedUrl);
     $("body").scrollTop(0);
-    history.pushState(null,null,url);
+    history.pushState(null, null, url);
 
 }
 
 
 
-window.onpopstate = function(event) {
+window.onpopstate = function (event) {
     console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
     console.log(typeof document.location.toString());
     openPage(document.location.toString());
-  };
+};
 
 
 // var oldURL = "";
@@ -53,15 +54,61 @@ window.onpopstate = function(event) {
 // checkURLchange();
 
 
+function updateEmail(emailclass) {
+    var userEmail = $('.' + emailclass).val();
+    console.log(userEmail);
 
-function createPlaylist(){
-    var name=prompt("Please Enter The Name of New Playlist:");
-    if(name!=null){
+    $.post("includes/handlers/ajax/updateEmail.php", { userEmail_new: userEmail, userEmail_old: userLoggedIn }).done(function (error) {
+        if (error != "") {
+            alert(error);
+            return;
+        }
+        openPage("updateDetails.php");
+    })
+}
+
+function updatePassword(current_pass, new_pass, confirm_pass) {
+
+    var userpass_old = $('.' + current_pass).val();
+    var userpass_new = $('.' + new_pass).val();
+    var userpass_confirm = $('.' + confirm_pass).val();
+    var error_checker=1;
+
+    if(!(/#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#/).test(userpass_new)){
+        error_checker=1; //password matches validation
+        // $pass1Er="Invalid Password";
+        console.log("yes");
+    }
+    else{
+        error_checker=0;
+        console.log("no");
+    }
+
+    if( userpass_new != userpass_confirm){
+        error_checker=0; //both passwords are different
+        // $pass2Er="Both passwords don't match! ";
+    } 
+    
+    if(error_checker==1)
+    {
+        $.post("includes/handlers/ajax/updatePassword.php", {userpass_new: userpass_new, userpass_old: userpass_old,userEmail:userLoggedIn}).done(function (error) {
+            if (error != "") {
+                alert(error);
+                return;
+            }
+            openPage("updateDetails.php");
+        });
+    }
+}
+
+function createPlaylist() {
+    var name = prompt("Please Enter The Name of New Playlist:");
+    if (name != null) {
         console.log(name);
         //ajax call to create playlist
-        $.post("includes/handlers/ajax/createPlaylist.php", {playlistName:name, useremail:userLoggedIn}).done(function(error){
+        $.post("includes/handlers/ajax/createPlaylist.php", { playlistName: name, useremail: userLoggedIn }).done(function (error) {
             // console.log(userLoggedIn);
-            if(error!=""){
+            if (error != "") {
                 alert(error);
                 return;
             }
@@ -70,13 +117,13 @@ function createPlaylist(){
     }
 }
 
-function deletePlaylist(id){
-    var prompt=confirm("Are you sure you want to delete this playlist?");
-    if(prompt==true){
+function deletePlaylist(id) {
+    var prompt = confirm("Are you sure you want to delete this playlist?");
+    if (prompt == true) {
         //ajax call to delete playlist
-        $.post("includes/handlers/ajax/deletePlaylist.php", {playlistID:id}).done(function(error){
+        $.post("includes/handlers/ajax/deletePlaylist.php", { playlistID: id }).done(function (error) {
             // console.log(userLoggedIn);
-            if(error!=""){
+            if (error != "") {
                 alert(error);
                 return;
             }
@@ -86,80 +133,80 @@ function deletePlaylist(id){
 }
 
 
-function formatTime(seconds){
-    var time=Math.round(seconds);
-    var minutes= Math.floor(time/60);
-    var seconds_rem = time-(minutes*60);
+function formatTime(seconds) {
+    var time = Math.round(seconds);
+    var minutes = Math.floor(time / 60);
+    var seconds_rem = time - (minutes * 60);
 
-    var extra_zero = (seconds_rem<10) ? "0":"";
+    var extra_zero = (seconds_rem < 10) ? "0" : "";
 
     return minutes + ":" + extra_zero + seconds_rem;
-} 
+}
 
-function updateProgressTime(song){
+function updateProgressTime(song) {
 
     $(".progressTime.current").text(formatTime(song.currentTime));
-    $(".progressTime.remaining").text(formatTime(song.duration-song.currentTime));
+    $(".progressTime.remaining").text(formatTime(song.duration - song.currentTime));
 
-    var progress= song.currentTime/song.duration * 100;
+    var progress = song.currentTime / song.duration * 100;
 
-    $(".progressprogress.song").css("width", progress+"%");
+    $(".progressprogress.song").css("width", progress + "%");
 
 }
 
-function playFirstSong(){
-    setTrack(tempPlaylist[0],tempPlaylist,true);
+function playFirstSong() {
+    setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
-function updateVolumeProgressBar(audio){
-    var volume=audio.volume*100;
-    $(".progressprogress.volume").css("width", volume+"%");
+function updateVolumeProgressBar(audio) {
+    var volume = audio.volume * 100;
+    $(".progressprogress.volume").css("width", volume + "%");
 }
 
-function Audio(){
+function Audio() {
     this.currentlyPlaying;
     this.audio = document.createElement('audio');
-    this.audio.addEventListener('canplay', function(){
+    this.audio.addEventListener('canplay', function () {
 
-        var duration= formatTime(this.duration);
-        $(".progressTime.remaining").text(duration); 
+        var duration = formatTime(this.duration);
+        $(".progressTime.remaining").text(duration);
 
     });
 
-    this.audio.addEventListener("timeupdate", function(){
+    this.audio.addEventListener("timeupdate", function () {
 
         updateProgressTime(this);
     });
 
-    this.audio.addEventListener("volumechange", function(){
+    this.audio.addEventListener("volumechange", function () {
         updateVolumeProgressBar(this);
     });
 
-    this.audio.addEventListener("ended", function(){
+    this.audio.addEventListener("ended", function () {
         nextSong();
     })
 
-    this.setTrack = function(track){
+    this.setTrack = function (track) {
         this.currentlyPlaying = track;
         this.audio.src = track.path;
     }
 
-    this.play = function(){
+    this.play = function () {
         this.audio.play();
     }
 
-    this.pause = function(){
+    this.pause = function () {
         this.audio.pause();
     }
 
-    this.settime = function(seconds){
+    this.settime = function (seconds) {
         this.audio.currentTime = seconds;
     }
 }
 
 
-function logout(){
-    $.post("includes/handlers/ajax/logout.php", function(){
+function logout() {
+    $.post("includes/handlers/ajax/logout.php", function () {
         location.reload();
         window.location.href = "index.php";
     });
