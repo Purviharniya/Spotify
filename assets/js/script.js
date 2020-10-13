@@ -6,7 +6,7 @@ var mousedown=false;
 var currentIndex=0;
 var repeat=false;
 var shuffle = false;
-var userLoggedIn='';
+var userLoggedIn;
 var timer;
 
 function openPage(url){
@@ -14,10 +14,10 @@ function openPage(url){
     if(timer != null){
         clearTimeout(timer);
     }
-
+    if(url!= undefined){
     if(url.indexOf('?')==-1){
         url = url + '?';
-    }
+    }}
 
     var encodedUrl = encodeURI(url + '&userLoggedIn=' + userLoggedIn);
     $("#main-content").load(encodedUrl);
@@ -25,6 +25,51 @@ function openPage(url){
     history.pushState(null,null,url);
 
 }
+
+
+
+window.onpopstate = function(event) {
+    console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+    console.log(typeof document.location.toString());
+    openPage(document.location.toString());
+  };
+
+
+// var oldURL = "";
+// var currentURL = window.location.href;
+// function checkURLchange(currentURL){
+//     if(currentURL != oldURL){
+//         // console.log(currentURL);
+//         // console.log(typeof oldURL);
+//         openPage(currentURL);
+//         oldURL = currentURL;
+//     }
+//     oldURL = window.location.href;
+
+//     setInterval(function() {
+//         checkURLchange(window.location.href);
+//     }, 1000);
+// }
+// checkURLchange();
+
+
+
+function createPlaylist(){
+    var name=prompt("Please Enter The Name of New Playlist:");
+    if(name!=null){
+        console.log(name);
+        //ajax call to create playlist
+        $.post("includes/handlers/ajax/createPlaylist.php", {playlistName:name, useremail:userLoggedIn}).done(function(error){
+            // console.log(userLoggedIn);
+            if(error!=""){
+                alert(error);
+                return;
+            }
+            openPage("yourmusic.php");
+        });
+    }
+}
+
 
 function formatTime(seconds){
     var time=Math.round(seconds);

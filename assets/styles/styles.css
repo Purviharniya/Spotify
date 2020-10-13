@@ -243,10 +243,9 @@
 .grid-view-item{
     display: inline-block;
     margin-right: 20px;
-    width: 29%;
+    width: 29%; 
     max-width: 200px;
     min-width: 150px;
-    height: 200px;
 }
 
 .grid-view-info {
@@ -496,4 +495,9 @@
 
 .searchresult-row:hover{
     background-color: #282828;
+}
+
+.playlist-img{
+    width: 100%;
+    border: 2px solid #282828;
 }

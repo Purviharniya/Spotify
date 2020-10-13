@@ -1,12 +1,12 @@
-<?php  
-    include('includes/scripts.php');
-    include('includes/config.php');
-    include('includes/classes/Account.php');
-    include('includes/classes/Constants.php');
+<?php
+include 'includes/scripts.php';
+include 'includes/config.php';
+include 'includes/classes/Account.php';
+include 'includes/classes/Constants.php';
 
-    $account = new Account($con);
+$account = new Account($con);
 
-    include('includes/handlers/register-handler.php');
+include 'includes/handlers/register-handler.php';
 ?>
 
 <?php
@@ -37,9 +37,9 @@
 
 // }
 
-
-function rememberInput($name){
-    if(isset($_POST[$name])){
+function rememberInput($name)
+{
+    if (isset($_POST[$name])) {
         echo $_POST[$name];
     }
 }
@@ -62,12 +62,12 @@ function rememberInput($name){
                     </div>
                     <div class="col-12 col-md-6 px-5 py-5 form-col">
                         <div class="row pb-4">
-                            <h1 class="si-title"> Sign up </h1>    
+                            <h1 class="si-title"> Sign up </h1>
                         </div>
                         <form method="POST" action="signup.php" class="signup-form" autocomplete="off">
                             <div class="form-group">
                                 <label for="InputEmail1">What's your email?</label>
-                                <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" value="<?php rememberInput('InputEmail1'); ?>" required>
+                                <input type="email" class="form-control si-in" id="InputEmail1" name="InputEmail1" aria-describedby="emailHelp" value="<?php rememberInput('InputEmail1');?>" required>
                                 <?php echo $account->getError(Constants::$invalidEmail); ?>
                                 <?php echo $account->getError(Constants::$emailAlreadyRegistered); ?>
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -92,19 +92,19 @@ function rememberInput($name){
                             </div>
                             <div class="form-group">
                                 <label for="profileName">What should we call you? </label>
-                                <input type="text" class="form-control si-in" id="profileName" name="profileName" value="<?php rememberInput('profileName'); ?>" required>
+                                <input type="text" class="form-control si-in" id="profileName" name="profileName" value="<?php rememberInput('profileName');?>" required>
                                 <?php echo $account->getError(Constants::$invalidProfName); ?>
                             </div>
                             <div class="form-group">
                                 <label for="contactNo">What is your contact number? </label>
-                                <input type="text" class="form-control si-in" id="contactNo" name="contactNo" value="<?php rememberInput('contactNo'); ?>"  required>
+                                <input type="text" class="form-control si-in" id="contactNo" name="contactNo" value="<?php rememberInput('contactNo');?>"  required>
                                 <?php echo $account->getError(Constants::$contactLengthWrong); ?>
                                 <?php echo $account->getError(Constants::$contactStartWrong); ?>
                             </div>
                             <div class="form-group">
                                 <label for="dob">What is your date of birth? </label>
                                 <div class="row">
-                                    <input type="text" class="form-control col-md-3 si-in" id="date" name="dobDate"  placeholder="Date" value="<?php rememberInput('dobDate'); ?>" required>
+                                    <input type="text" class="form-control col-md-3 si-in" id="date" name="dobDate"  placeholder="Date" value="<?php rememberInput('dobDate');?>" required>
                                     <select id="month" name="dobMonth" class="form-control si-in col-md-3 mx-3" id="month" required>
                                         <option value="">Month</option>
                                         <option value="01">January</option>
@@ -120,7 +120,7 @@ function rememberInput($name){
                                         <option value="11">November</option>
                                         <option value="12">December</option>
                                     </select>
-                                    <input type="text" class="form-control si-in col-md-3" name="dobYear" id="year" placeholder="Year" value="<?php rememberInput('dobYear'); ?>" required>
+                                    <input type="text" class="form-control si-in col-md-3" name="dobYear" id="year" placeholder="Year" value="<?php rememberInput('dobYear');?>" required>
                                 </div>
                                 <?php echo $account->getError(Constants::$invalidDOBYear); ?>
                                 <?php echo $account->getError(Constants::$invalidDOBMonth); ?>
@@ -135,7 +135,7 @@ function rememberInput($name){
                                 <button type="submit" name="registerBtn" class="btn si-btn" title="Sign up"> SIGN UP </button>
                             </div>
                             <div class="form-group si-alt">
-                                Already have an account? <a href="signin.php">Sign in here. </a> 
+                                Already have an account? <a href="signin.php">Sign in here. </a>
                             </div>
                         </form>
                     </div>

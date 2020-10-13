@@ -24,8 +24,10 @@ if(isset($_POST['registerBtn']))
 
     if($success==true){
         $_SESSION['userLoggedIn'] = $userEmail;
-        echo "<script type='text/javascript'>alert('Registered successfully!');</script>";
-        header("Location: landing.php");
+        echo "<script type='text/javascript'>alert('Registered successfully!');
+        window.location='landing.php';
+        </script>";
+        //header("Location: landing.php");
     }
     
     else{

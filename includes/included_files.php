@@ -8,12 +8,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
     include('includes/classes/Artist.php');
     include('includes/classes/Album.php');
     include('includes/classes/Song.php');
+    include('includes/classes/Playlist.php');
 
     if(isset($_SESSION['userLoggedIn'])) {
         $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
     }
     else {
-		echo "Username variable was not passed into page. Check the openPage JS function";
+		echo "User's Email variable was not passed into page. Check the openPage JS function";
 		exit();
 	}
 }

@@ -1,11 +1,9 @@
-<?php 
+<?php
 
-include('includes/header.php'); 
+include 'includes/header.php';
 
-
-if(isset($_POST['subbtn']))
-{
-    $_SESSION['latest_feedback']=$_POST['Feedback'];
+if (isset($_POST['subbtn'])) {
+    $_SESSION['latest_feedback'] = $_POST['Feedback'];
     $_SESSION['feeds']++;
 
 }
@@ -18,11 +16,11 @@ echo "
     <p> Name: " . $_POST['Name'] . "</p>
     <p> Feedback: " . $_SESSION['latest_feedback'] . "</p>
     <a href='feedback.php' class='btn btn-secondary'>
-        Submit another feedback -> 
+        Submit another feedback ->
     </a>
 </div>
 
 
 ";
 
-include('includes/footer.php'); ?>
+include 'includes/footer.php';

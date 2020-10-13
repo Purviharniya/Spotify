@@ -158,3 +158,176 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-top: 2px;
 }
+
+
+
+
+/* FORGOT PASS */
+
+.fo-background1{
+    /* background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%); */
+    background-color: #d4418e;
+    background-image: linear-gradient(315deg, #000428 0%,  #004e92 64% , #0f80e4 100% );
+    padding: 40px 150px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fo-background2{
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+
+.fo-background3{
+    background-color:#A2DBE2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.fo-background4{
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0,0.5);
+}
+
+.fo-img{
+    border-radius: 20%;
+}
+
+.fo-in{
+    width: 60%;
+    border: none;
+    border-bottom: 1px solid #FF6464 ;
+    padding: 0;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    padding-left: 7%;
+    background-size: 10% 100%;
+}
+
+
+.fo-in:focus{
+    border: none;
+    box-shadow: none;
+    border-bottom: 3px solid black;
+}
+
+.fo-title{
+    color: #FF6464;
+    text-shadow: 2px 2px #575962;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#FoEmail{
+    background-image:url('../images/signup/email.png');
+}
+
+#FoPassword{
+    background-image:url('../images/signup/password1.png');
+}
+
+#FoToken{
+    background-image:url('../images/signup/password.png');
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.fo-form label{
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.fo-fo{
+    text-decoration: underline;
+}
+
+.fo-btn{
+    background-color: #d4418e;
+    background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+    color: white;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0,0.7);
+}
+
+.fo-btn:hover{
+    background-color:#FF6464 !important;
+    background-image: none;
+}
+
+.fo-alt{
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width:1024px){
+    .fo-in{
+        background-size: 20% 100%;
+        padding-left: 13%;
+    }
+    .fo-background1{
+        padding: 30px 40px;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width: 768px) { 
+    .fo-background1{
+        padding: 30px 20px;
+        font-weight: 700;
+    }
+
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .fo-form-col{
+        padding-left: 20px !important ;
+    }
+
+    .fo-background3{
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 30px;
+        
+    }
+
+    .fo-img{
+        height: 90%;
+    }
+
+    .fo-in{
+        width: 100%;
+        padding-left: 11%;
+        background-size: 10% 100% !important;
+        margin: 0 !important;
+    }
+
+    .fo-alt{
+        font-size: 1rem;
+    }
+}
+
+
+.error-msg{
+    color:red;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 2px;
+}
+
+

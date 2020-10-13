@@ -143,7 +143,7 @@ $(document).ready(function(){
 
 
 <div class="gridviewContainer pt-5">
-    <h2 class="p-2 pb-4" style="font-family:castellar;">POPULAR ALBUMS </h2>
+    <h2 class="p-2 pb-4" style="font-family:castellar;">ALBUMS </h2>
 <?php 
 
     $albumQuery = mysqli_query($con, "SELECT * from albums where title like '%$term%'");

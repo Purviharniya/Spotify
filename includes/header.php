@@ -6,8 +6,9 @@
     include('includes/classes/Song.php');
  
     if(isset($_SESSION['userLoggedIn'])){
-        $userLogedIn = $_SESSION['userLoggedIn'];
-        echo "<script>userLoggedIn = '$userLogedIn'; </script>";
+        $userLoggedIn = $_SESSION['userLoggedIn'];
+        echo "<script>userLoggedIn = '$userLoggedIn'; </script>";
+        // echo "<script>console.log('userLoggedIn');</script>";
         if(isset($_SESSION['ca']))
         {
         $_SESSION['ca']++;
