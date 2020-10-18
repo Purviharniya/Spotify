@@ -26,10 +26,10 @@ echo "
 
     <div class='form-group row'>
         <label for='Feedback' class='col-12 col-md-3 align-self-center'>FEEDBACK: </label>
-        <textarea class='form-control col-12 col-md-6' name='Feedback' rows='3' required></textarea>
+        <textarea class='form-control col-12 col-md-6' name='Feedback' rows='5' required></textarea>
     </div>
     <div class='form-group row'>
-        <button type='submit' class=' offset-md-3 btn btn-primary' name='subbtn'>SUBMIT </button>
+        <button type='submit' class=' offset-md-3 user-buttons-1' name='subbtn'>SUBMIT </button>
     </div>
 </form>
 

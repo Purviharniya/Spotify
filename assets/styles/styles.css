@@ -183,10 +183,13 @@
 .s-nav .nav-item .nav-link:focus{
     border: none;
     outline: none;
+    color: white;
 }
+
 .s-nav .nav-item .nav-link:active{
     border: none;
     outline: none;
+    color: white;
 }
 .ic-search{
     position: absolute;
@@ -444,6 +447,23 @@
 .user-buttons:hover{
     background-image: linear-gradient(to right, #4e4e4e,#2c2c2c ,#202020);;
 }
+
+.user-buttons-1{
+    background-color: #181818;
+    color: white;
+    border: 2px double white;
+    margin:5px;
+    padding: 0.7rem 1rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: castellar;
+    box-shadow: 2px 1px 2px #b6b3b3 ;
+}
+.user-buttons-1:hover{
+    background-image: linear-gradient(to right, #4e4e4e,#2c2c2c ,#202020);;
+}
+
 
 .userInfo h3{
     border: 1px solid #4e4e4e;
