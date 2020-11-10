@@ -10,22 +10,21 @@ if(!isset($_SESSION['feeds'])){
 $user_em=$_SESSION['userLoggedIn'];
 
 echo "
-<h3 class='text-center pt-5'>Submit Your Feedbacks Here! </h3>
-<form  method='post' action='feed.php' class='feedback-form p-5' >
+<form  method='post' action='feed.php' class='feedback p-5'>
 
     <div class='form-group row'>
-        <label for='Email' class='col-12 col-md-3 align-self-center'>EMAIL: </label>
+        <label for='Email' class='col-12 col-md-3'>EMAIL: </label>
         <input type='text' class='form-control col-12 col-md-6' name='Email' value='".$user_em."' disabled='true'>
         <input type='hidden' class='form-control col-12 col-md-6' name='UEmail' value='".$user_em."'>
     </div>
 
     <div class='form-group row'>
-        <label for='Name' class='col-12 col-md-3 align-self-center'>NAME: </label>
+        <label for='Name' class='col-12 col-md-3'>NAME: </label>
         <input type='text' class='form-control col-12 col-md-6' name='Name' required>
     </div>
 
     <div class='form-group row'>
-        <label for='Feedback' class='col-12 col-md-3 align-self-center'>FEEDBACK: </label>
+        <label for='Feedback' class='col-12 col-md-3'>FEEDBACK: </label>
         <textarea class='form-control col-12 col-md-6' name='Feedback' rows='5' required></textarea>
     </div>
     <div class='form-group row'>
@@ -33,6 +32,6 @@ echo "
     </div>
 </form>
 
-<h5 class='float-right'> FEEDBACKS SUBMITTED: " . $_SESSION['feeds'] . " </h5>
+<h6 class='float-right text-muted'> FEEDBACKS SUBMITTED: " . $_SESSION['feeds'] . " </h6>
 ";
 

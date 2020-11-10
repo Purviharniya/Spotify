@@ -97,6 +97,19 @@ function updateEmail(emailclass) {
     })
 }
 
+function updateUsername(name_class){
+    var username= $('.'+name_class).val();
+
+    $.post("includes/handlers/ajax/updateName.php",{username:username,useremail: userLoggedIn}).done(function(error){
+        if(error!=""){
+            alert(error);
+            return;
+        }
+    openPage("updateDetails.php");
+  })
+}
+
+
 function updatePassword(current_pass, new_pass, confirm_pass) {
 
     var userpass_old = $('.' + current_pass).val();

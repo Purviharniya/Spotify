@@ -72,8 +72,6 @@ $artistId = $artist->getArtistID();
 
 <nav class="optionsMenu">
 	<input type="hidden" class="songId">
-	<div class="item">Add to Playlist</div>
-	<div class="item">Remove from Playlist</div>
     <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getEmail()); ?>
 </nav>
 
