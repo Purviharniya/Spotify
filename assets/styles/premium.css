@@ -1,0 +1,67 @@
+.premium-info{
+    padding-top: 10%;
+    background-color: black;
+    color: #fff;
+    padding-bottom: 10%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sp-1{
+    padding-top: 10px;
+    font-family: castellar;
+    font-size: 2.5rem;
+}
+
+.sp-2{
+    padding-top: 30px;
+    font-size: 1.8rem;
+
+}
+
+.btn-pre{
+    background-color: #181818;
+    color: white;
+    border: 2px double white;
+    margin-top:30px !important;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: castellar;
+    box-shadow: 2px 1px 2px #b6b3b3 ;
+}
+
+.btn-pre:hover{
+    background-image: linear-gradient(to right, #4e4e4e,#2c2c2c ,#202020);;
+    color: white;
+}
+
+.benefits{
+    padding: 3% 10%;
+}
+
+.pcards{
+    min-height:450px;
+}
+
+.pcards .card{
+padding: 20px;
+border: 2px double black;
+border-radius: 20px;
+box-shadow: 2px 2px 10px black;
+}
+
+.pcards .card:hover{
+    transition: 1s;
+    transform: scale(1.1);
+}
+
+.pre-text{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-img-top{
+    width: 60% !important;
+    align-self: center;
+}

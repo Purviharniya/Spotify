@@ -21,6 +21,40 @@ $(document).click(function(click) {
 	}
 });
 
+$(document).on("change","select.playlist", function(){
+    var playlist=$(this).val();
+    var songId= $(this).prev(".songId").val();
+
+    // console.log(playlist);
+    // console.log(songId);
+
+    $.post("includes/handlers/ajax/addToPlaylist.php", {playlistId: playlist, songId:songId}).done(function(error){
+
+        if(error!=''){
+            alert(error);
+            return;
+        }
+
+        hideOptionsMenu();
+        $(this).val("");
+    });
+
+});
+
+function removeFromPlaylist(button, playlist){
+    var songId = $(button).prevAll(".songId").val();    
+
+    $.post("includes/handlers/ajax/removeFromPlaylist.php", {playlistId: playlist, songId:songId}).done(function(error){
+
+        if(error!=''){
+            alert(error);
+            return;
+        }
+
+        openPage("playlist.php?id="+ playlist);
+    });
+}
+
 function openPage(url) {
 
     if (timer != null) {
@@ -67,13 +101,17 @@ window.onpopstate = function (event) {
 
 
 function showOptionsMenu(button){
+
+    var songId = $(button).prevAll(".songId").val();    
+
     var menu= $('.optionsMenu');
+    menu.find(".songId").val(songId);
     var scrollTop = $(window).scrollTop(); //from top of window to top of document
     var elementOffset = $(button).offset().top; //from top of window
     var top = elementOffset-scrollTop;
     var left = $(button).position().left;
 
-    menu.css({ "top":top +"px", "left":left +"px", "display":"inline" });
+    menu.css({ "top":top +"px", "left":(left+50) +"px", "display":"inline" });
 
 }
 

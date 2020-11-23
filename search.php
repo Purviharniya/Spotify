@@ -87,7 +87,8 @@ $(document).ready(function(){
                         <span class='track-artist'>". $songartist->getArtistName() . "</span>
                     </div>
                     <div class='track-options'>
-                        <img src='assets/images/icons/more.png' alt='options' class='options-btn'>
+                        <input type='hidden' class='songId' value='". $albumsong->songID() ."'>
+                        <img src='assets/images/icons/more.png' alt='options' class='options-btn' onclick='showOptionsMenu(this)'>
                     </div>
                     <div class='track-duration'> 
                         <span class='duration'> ". $albumsong->duration() . " </span>
@@ -106,6 +107,12 @@ $(document).ready(function(){
             tempPlaylist = JSON.parse(tempSongIds);
             console.log(tempPlaylist);
         </script>
+   
+        <nav class="optionsMenu">
+            <input type="hidden" class="songId">
+            <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getEmail()); ?>
+        </nav>
+
     </ul>   
 </div>
 

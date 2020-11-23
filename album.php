@@ -48,6 +48,7 @@ $artistId = $artist->getArtistID();
                         <span class='track-artist' role='link' tabindex='0' onclick= openPage(\"artist.php?id=" . $albumsong->artistID() . "\")>". $songartist->getArtistName() . "</span>
                     </div>
                     <div class='track-options'>
+                        <input type='hidden' class='songId' value='". $albumsong->songID() ."'>
                         <img src='assets/images/icons/more.png' alt='options' class='options-btn' onclick='showOptionsMenu(this)'>
                     </div>
                     <div class='track-duration'> 

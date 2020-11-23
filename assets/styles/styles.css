@@ -539,7 +539,11 @@
     font-weight: 400;
     color: rgba(147, 147, 147, 0.8);
     cursor: pointer;
-    height: 40px;
+    height: 50px;
+}
+
+.optionsMenu .item option{
+    padding:10px 0px;
 }
 
 .optionsMenu .item:hover {
@@ -547,7 +551,6 @@
     background-color: #333;
     border-color: #333;
 }
-
 
 
 .feedback, .update-details{
@@ -562,23 +565,15 @@
     font-family: Georgia, "Times New Roman", Times, serif;
     margin-top: 3%;
 }
-/* .feedback fieldset{
-	border: none;
-}
-.feedback legend {
-	font-size: 1.4em;
-	margin-bottom: 10px;
-} */
+
 .feedback label , .update-details label{
 	display: block;
-    /* margin-bottom: 8px; */
     font-size:1.2rem;
     color:#a0a0a0;
 }
 .feedback input[type="text"],
 .feedback input[type="email"],
 .feedback input[type="password"],
-
 .feedback textarea,
 .feedback select ,
 .update-details input[type="text"],
@@ -625,19 +620,6 @@
 	-webkit-appearance: menulist-button;
 	height:35px;
 }
-/* .feedback .number {
-	background: #1abc9c;
-	color: #fff;
-	height: 30px;
-	width: 30px;
-	display: inline-block;
-	font-size: 0.8em;
-	margin-right: 4px;
-	line-height: 30px;
-	text-align: center;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-	border-radius: 15px 15px 15px 0px;
-} */
 
 .feedback input[type="submit"],
 .feedback input[type="button"],

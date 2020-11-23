@@ -47,13 +47,15 @@ foreach ($songIDArray as $songId) {
                         <span class='track-artist' role='link' tabindex='0' onclick= openPage(\"artist.php?id=" . $playlistsong->artistID() . "\")>" . $songartist->getArtistName() . "</span>
                     </div>
                     <div class='track-options'>
-                        <img src='assets/images/icons/more.png' alt='options' class='options-btn'>
+                        <input type='hidden' class='songId' value='". $playlistsong->songID() ."'>
+                        <img src='assets/images/icons/more.png' alt='options' class='options-btn'  onclick='showOptionsMenu(this)'>
                     </div>
                     <div class='track-duration'>
                         <span class='duration'> " . $playlistsong->duration() . " </span>
                     </div>
                 </li>
 
+                
                 ";
 
     $i += 1;
@@ -66,4 +68,11 @@ foreach ($songIDArray as $songId) {
             console.log(tempPlaylist);
         </script>
     </ul>
+    
+        <nav class="optionsMenu">
+            <input type="hidden" class="songId">
+            <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getEmail()); ?>
+            <div class="item" onclick="removeFromPlaylist(this,'<?php echo $playlistID;?>')">Remove from Playlist</div> 
+        </nav>
+
 </div>
