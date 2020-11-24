@@ -1,38 +1,38 @@
 <?php
 include 'includes/scripts.php';
-include('includes/config.php');
+include 'includes/config.php';
 ?>
 
 
 <?php
-    $e1=""; $e2=""; $e3=""; 
-if(isset($_POST["submit"]))
-{
-    $email=$_POST["Email"];
-    $pass=$_POST["password"];
-    $pass=md5($pass);   
+$e1 = "";
+$e2 = "";
+$e3 = "";
+if (isset($_POST["submit"])) {
+    $email = $_POST["Email"];
+    $pass = $_POST["password"];
+    $pass = md5($pass);
 
-    $query= mysqli_query($con,"SELECT * FROM users where email='$email'");
+    $query = mysqli_query($con, "SELECT * FROM users where email='$email'");
     $result = mysqli_fetch_array($query);
-    
-    if(mysqli_num_rows($query)!=1){
-        $e1="User does not exist";
+
+    if (mysqli_num_rows($query) != 1) {
+        $e1 = "User does not exist";
     }
 
-    if($pass=! $result["password"]){
-        $e2="Password incorrect";
+    if ($pass = !$result["password"]) {
+        $e2 = "Password incorrect";
     }
-   
-    $query2=mysqli_query($con, "SELECT * from premiumusers where email='$email'");
+
+    $query2 = mysqli_query($con, "SELECT * from premiumusers where email='$email'");
     $result2 = mysqli_fetch_array($query);
-    if(mysqli_num_rows($query2)!=1){
-        $q3=mysqli_query($con, "INSERT into premiumusers values('','$email')");
+    if (mysqli_num_rows($query2) != 1) {
+        $q3 = mysqli_query($con, "INSERT into premiumusers values('','$email')");
         echo "<script>alert('registered as a premium user');</script>";
-    }else{
-        $e3="You are already a premium user";
+    } else {
+        $e3 = "You are already a premium user";
     }
 
-    
 }
 
 ?>
@@ -96,7 +96,7 @@ if(isset($_POST["submit"]))
                     <h2 class="sp-2">Unlock some great music albums, created JUST FOR YOU!</h2>
                 </div>
                 <div class="col-12 col-md-6 text-center">
-                    <img src="assets/images/home/premium.jpg" height="150%" width="80%"></img>
+                    <img src="assets/images/home/premium.jpg" height="150%" width="90%"></img>
                 </div>
                 <div class="col-12 col-md-12">
                     <a href="#get-premium">
