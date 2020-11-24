@@ -109,55 +109,72 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
     </section>
-    <section class="benefits">
+    <section class="benefits mt-5">
         <h1 class="text-center pb-5 text-uppercase font-weight-bold" style="font-size:3rem;">
             The power of Premium
         </h1>
         <div class="card-deck pcards text-center">
             <div class="card text-center">
-                <img src="assets/images/home/p1.png" class="card-img-top" width="60%" height="60%">
+                <img src="assets/images/home/p1.png" class="card-img-top" width="60%" height="50%">
                 <div class="text-center card-body">
-                    <p class="card-text pt-5 pre-text">Unlock Special Albums, Only For You!</p>
+                    <p class="card-text pre-text">Unlock Special Albums, Only For You!</p>
                 </div>
             </div>
             <div class="card text-center">
-                <img src="assets/images/home/p3.png" class="card-img-top" width="60%" height="60%">
+                <img src="assets/images/home/p3.png" class="card-img-top" width="60%" height="50%">
                 <div class="text-center card-body">
-                    <p class="card-text pt-5 pre-text">Get Top Artist Podcasts, Albums, and Premium Songs!</p>
+                    <p class="card-text pre-text">Get Top Artist Podcasts, Albums, and Premium Songs!</p>
                 </div>
             </div>
             <div class="card text-center">
-                <img src="assets/images/home/p2.png" class="card-img-top" width="60%" height="60%">
+                <img src="assets/images/home/p2.png" class="card-img-top" width="60%" height="50%">
                 <div class="text-center card-body">
-                    <p class="card-text pt-5 pre-text">Get update letters and emails!</p>
+                    <p class="card-text pre-text">Get update letters and emails!</p>
                 </div>
             </div>
             <div class="card text-center">
-                <img src="assets/images/home/p4.png" class="card-img-top" width="60%" height="60%">
+                <img src="assets/images/home/p4.png" class="card-img-top" width="60%" height="50%">
                 <div class="text-center card-body">
-                    <p class="card-text pt-5 pre-text">Get chances to win free concert tickets!</p>
+                    <p class="card-text pre-text">Get chances to win free concert tickets!</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="apply-premium p-5" id="get-premium">
-        <div class="container mt-5">
-            <form action="premium.php" method="post">
+    <section class="apply-premium p-5 " id="get-premium">
+        <h1 class="text-center"> BE OUR PREMIUM MEMBER</h1>
+        <div class="mt-5">
+            <form action="premium.php" method="post" class="pre-form">
                 <div class="form-group">
                     <label for="Email">Email address:</label>
-                    <input type="email" class="form-control" id="Email" name="Email">
+                    <input type="email" class="form-control pre-input" id="Email" name="Email">
                     <div class="error"> <?php echo $e1; ?></div>
                     <div class="error"> <?php echo $e2; ?></div>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input type="password" class="form-control pre-input" id="password" name="password">
                     <div class="error"> <?php echo $e3; ?></div>
                 </div>
-                <input type="submit" value="submit" name="submit">
+                <input type="submit" value="submit" name="submit" class="btn-pre1">
             </form>
         </div>
 
+    </section>
+    <section class="footer-sec">
+        <div class="container-fluid footer py-4">
+            <div class="row text-center pb-4">
+                <div class="col-12">
+                    <span class="fa fa-instagram social"></span>
+                    <span class="fa fa-twitter social mx-2"></span>
+                    <span class="fa fa-facebook social"></span>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    Made by Purvi & Atharva, KJSCE | &copy; 2020
+                </div>
+            </div>
+        </div>
     </section>
 
     <body>
