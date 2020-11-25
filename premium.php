@@ -143,7 +143,7 @@ if (isset($_POST["submit"])) {
     <section class="apply-premium p-5 " id="get-premium">
         <h1 class="text-center"> BE OUR PREMIUM MEMBER</h1>
         <div class="mt-5">
-            <form action="premium.php" method="post" class="pre-form">
+            <form action="premium.php" method="post" class="pre-form" autocomplete="off">
                 <div class="form-group">
                     <label for="Email">Email address:</label>
                     <input type="email" class="form-control pre-input" id="Email" name="Email">
