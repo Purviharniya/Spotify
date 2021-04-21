@@ -80,6 +80,10 @@
                     <span role="link" tabindex="0" onclick="openPage('yourmusic.php')" class="nav-link"> Your Music
                     </span>
                 </li>
+                <li class="nav-item">
+                    <span role="link" tabindex="0" onclick="openPage('likedsongs.php')" class="nav-link"> Liked Songs
+                    </span>
+                </li>
                 <?php 
                     $user = $_SESSION['userLoggedIn'];
                     $query= mysqli_query($con,"SELECT * from premiumusers where email ='$user'");

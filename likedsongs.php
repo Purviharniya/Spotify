@@ -1,38 +1,19 @@
-<?php include('includes/included_files.php');
- 
-if(isset($_GET['id'])){ 
-    $albumID= $_GET['id'];
-}
+<?php
+include('includes/included_files.php');
 
-else{
-    header("Location: landing.php");
-}
-
-$album = new Album($con, $albumID);
-$artist = $album->getArtist();
-$artistId = $artist->getArtistID();
 ?>
-
-
-<div class="album-info w-100 pt-5 d-inline-block">
-    <div class="left-section">
-        <img src="<?php echo $album->getImage(); ?>" class="w-100 img-fluid al-i">
-    </div>
-
-    <div class="right-section">
-        <p class="al-name"> <?php echo $album->getAlbumName(); ?> </p>
-        <p class="al-artist-name" role='link' tabindex='0' onclick="openPage('artist.php?id= <?php echo $artistId;?>')">
-            By <?php echo $artist->getArtistName(); ?> </p>
-        <span class="al-songs"> <?php echo $album->getNumberofSongs(); ?> songs </span>
-    </div>
-</div>
-
-
 <div class="track-list-container pt-5">
+    <div class="text-center p-5">
+        <h1 class="p-5">YOUR LIKED SONGS</h1>
+    </div>
     <ul class="tracklist list-unstyled">
         <?php 
-            $songIDArray= $album->getSongIDs();
-            $i=1;
+        
+            $useremail=$_SESSION['userLoggedIn'];
+            $q= mysqli_query($con,"SELECT songid from likedsongs where email='$useremail'");
+            $songIDArray= mysqli_fetch_array($q);
+                          
+            $i=1; 
             foreach($songIDArray as $songId){
                 $albumsong = new Song($con, $songId);
                 $songartist = $albumsong->artist();
@@ -64,7 +45,7 @@ $artistId = $artist->getArtistID();
         ?>
 
         <script>
-        var tempSongIds = '<?php echo json_encode($songIDArray); ?>';
+        var tempSongIds = '<?php echo json_encode( $songIDArray); ?>';
         tempPlaylist = JSON.parse(tempSongIds);
         console.log(tempPlaylist);
         </script>
@@ -75,5 +56,4 @@ $artistId = $artist->getArtistID();
 <nav class="optionsMenu">
     <input type="hidden" class="songId">
     <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getEmail()); ?>
-
 </nav>

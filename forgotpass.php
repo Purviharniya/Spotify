@@ -34,11 +34,11 @@ if (isset($_POST['token-btn'])) {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'symphony.lyy@gmail.com';
-                $mail->Password = 'password';
+                $mail->Username = '@gmail.com';
+                $mail->Password = 'Password';
                 $mail->SMTPSecure = 'tls';
                 $mail->Port = 587;
-                $mail->setFrom('symphony.lyy@gmail.com', 'Symphony');
+                $mail->setFrom('@gmail.com', 'Symphony');
                 $mail->addAddress($emailID);
                 $mail->isHTML(true);
                 $mail->Subject = 'Token for forgot password';
@@ -88,8 +88,7 @@ if (isset($_POST['token-btn'])) {
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" name="token-btn" class="btn fo-btn"
-                                onclick="<?php countTokens();?>"
+                            <button type="submit" name="token-btn" class="btn fo-btn" onclick="<?php countTokens();?>"
                                 <?php if ($_SESSION['tokens_generated'] > 3) {echo "disabled";}?>> GET TOKEN
                             </button>
                         </div>
@@ -99,7 +98,8 @@ if (isset($_POST['token-btn'])) {
                         <h1 class="fo-title"> RESET PASSWORD</h1>
                     </div>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="fo-form" autocomplete="off">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="fo-form"
+                        autocomplete="off">
                         <div class="form-group">
                             <label for="FoEmail">Email:</label>
                             <input type="email" class="form-control fo-in" id="FoEmail" name="emailid" required>
@@ -111,14 +111,15 @@ if (isset($_POST['token-btn'])) {
 
                         <div class="form-group">
                             <label for="FoPassword">New Password:</label>
-                            <input type="password" class="form-control fo-in" id="FoPassword" name="pass1" aria-describedby="passwordHelp" required>
+                            <input type="password" class="form-control fo-in" id="FoPassword" name="pass1"
+                                aria-describedby="passwordHelp" required>
                             <small id="passwordHelp" class="form-text text-muted">The password should contain:
-                                    <ul>
-                                        <li>8-20 Characters</li>
-                                        <li>Atleast one Uppercase </li>
-                                        <li>Atleast one number </li>
-                                        <li>Atleast one special character </li>
-                                    </ul>
+                                <ul>
+                                    <li>8-20 Characters</li>
+                                    <li>Atleast one Uppercase </li>
+                                    <li>Atleast one number </li>
+                                    <li>Atleast one special character </li>
+                                </ul>
                             </small>
                         </div>
                         <div class='error-msg'><?php echo $pass1Er; ?></div>
