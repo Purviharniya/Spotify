@@ -1,13 +1,13 @@
 <?php
 
-$songQ= mysqli_query($con, "SELECT id from songs ORDER BY RAND() LIMIT 10");
-$resultArray=array();
+$songQ = mysqli_query($con, "SELECT id from songs ORDER BY RAND() LIMIT 10");
+$resultArray = array();
 
-while($row = mysqli_fetch_array($songQ)){
-    array_push($resultArray,$row['id']);
+while ($row = mysqli_fetch_array($songQ)) {
+    array_push($resultArray, $row['id']);
 }
 
-$jsonArray= json_encode($resultArray);
+$jsonArray = json_encode($resultArray);
 
 ?>
 
@@ -65,7 +65,7 @@ $(document).ready(function() {
     $(document).mouseup(function() {
         mousedown = false;
     });
-
+    setlike(0, 1);
 })
 
 console.log(<?php echo $jsonArray; ?>);
@@ -112,6 +112,7 @@ function playSong() {
     $(".controlButton.playButton").hide();
     $(".controlButton.pauseButton").show();
     audioElement.play();
+    setlike(0, 1);
 }
 
 function pauseSong() {
@@ -127,10 +128,40 @@ function setrepeat() {
 
 }
 
-function setlike() {
-    $.post("includes/handlers/ajax/updatelikes.php", {
-        songID: audioElement.currentlyPlaying.id
-    });
+function setlike(clicked, notclicked) {
+    if (clicked) {
+        $.post("includes/handlers/ajax/updatelikes.php", {
+            songID: audioElement.currentlyPlaying.id
+        }, function(data, status) {
+            //set the image to like if liked, else hollow
+            // alert(data);
+            var image;
+            if (data == "true") {
+                image = "like.png";
+            } else {
+                image = "like-hollow.png";
+            }
+            $(".likebt-i").attr("src", "assets/images/icons/" + image);
+        });
+    }
+
+    if (notclicked) {
+        // alert("not clicked");
+        //check if song is already liked
+        $.post("includes/handlers/ajax/checklikes.php", {
+            songID: audioElement.currentlyPlaying.id ? audioElement.currentlyPlaying.id : -1
+        }, function(data, status) {
+            //set the image to like if liked, else hollow
+            // alert(data);
+            var image;
+            if (data == "true") {
+                image = "like.png";
+            } else {
+                image = "like-hollow.png";
+            }
+            $(".likebt-i").attr("src", "assets/images/icons/" + image);
+        });
+    }
 }
 
 function setmute() {
@@ -249,8 +280,8 @@ function setTrack(trackID, newPlaylist, play) {
                 <button class="controlButton repeatButton" title="Repeat button" onclick="setrepeat()">
                     <img src="assets/images/icons/repeat.png" alt="repeat" class="repeatbt-i">
                 </button>
-                <button class="controlButton likeButton" title="Repeat button" onclick="setlike()">
-                    <img src="assets/images/icons/like.png" alt="repeat" class="repeatbt-i">
+                <button class="controlButton likeButton" title="Like button" onclick="setlike(1,0)">
+                    <img src="assets/images/icons/like-hollow.png" alt="like" class="likebt-i">
                 </button>
             </div>
             <div class="playBar-container d-flex justify-content-center pt-2">

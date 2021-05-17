@@ -1,10 +1,8 @@
-<?php include('includes/included_files.php');
- 
-if(isset($_GET['id'])){ 
-    $albumID= $_GET['id'];
-}
+<?php include 'includes/included_files.php';
 
-else{
+if (isset($_GET['id'])) {
+    $albumID = $_GET['id'];
+} else {
     header("Location: landing.php");
 }
 
@@ -21,7 +19,8 @@ $artistId = $artist->getArtistID();
 
     <div class="right-section">
         <p class="al-name"> <?php echo $album->getAlbumName(); ?> </p>
-        <p class="al-artist-name" role='link' tabindex='0' onclick="openPage('artist.php?id= <?php echo $artistId;?>')">
+        <p class="al-artist-name" role='link' tabindex='0'
+            onclick="openPage('artist.php?id= <?php echo $artistId; ?>')">
             By <?php echo $artist->getArtistName(); ?> </p>
         <span class="al-songs"> <?php echo $album->getNumberofSongs(); ?> songs </span>
     </div>
@@ -30,41 +29,42 @@ $artistId = $artist->getArtistID();
 
 <div class="track-list-container pt-5">
     <ul class="tracklist list-unstyled">
-        <?php 
-            $songIDArray= $album->getSongIDs();
-            $i=1;
-            foreach($songIDArray as $songId){
-                $albumsong = new Song($con, $songId);
-                $songartist = $albumsong->artist();
+        <?php
+$songIDArray = $album->getSongIDs();
+$i = 1;
+foreach ($songIDArray as $songId) {
+    $albumsong = new Song($con, $songId);
+    $songartist = $albumsong->artist();
 
-                echo "
+    echo "
                 <li class='tracklist-row'>
                     <div class='track-count'>
-                        <img class='play-s' src='assets/images/icons/play-white.png' alt='play' onclick='setTrack(\"" .$albumsong->SongID() ."\",  tempPlaylist,true)'>
-                      <span class='track-no'>". $i . ".</span>
+                        <img class='play-s' src='assets/images/icons/play-white.png' alt='play' onclick='setTrack(\"" . $albumsong->SongID() . "\",  tempPlaylist,true)'>
+                      <span class='track-no'>" . $i . ".</span>
                     </div>
-                   
+
                     <div class='track-info'>
-                        <span class='track-name'>". $albumsong->title() . "</span>
-                        <span class='track-artist' role='link' tabindex='0' onclick= openPage(\"artist.php?id=" . $albumsong->artistID() . "\")>". $songartist->getArtistName() . "</span>
+                        <span class='track-name'>" . $albumsong->title() . "</span>
+                        <span class='track-artist' role='link' tabindex='0' onclick= openPage(\"artist.php?id=" . $albumsong->artistID() . "\")>" . $songartist->getArtistName() . "</span>
                     </div>
                     <div class='track-options'>
-                        <input type='hidden' class='songId' value='". $albumsong->songID() ."'>
+                        <input type='hidden' class='songId' value='" . $albumsong->songID() . "'>
                         <img src='assets/images/icons/more.png' alt='options' class='options-btn' onclick='showOptionsMenu(this)'>
                     </div>
-                    <div class='track-duration'> 
-                        <span class='duration'> ". $albumsong->duration() . " </span>
+                    <div class='track-duration'>
+                        <span class='duration'> " . $albumsong->duration() . " </span>
                     </div>
                 </li>
-                
+
                 ";
 
-                $i+=1;
-            }
-        ?>
+    $i += 1;
+}
+?>
 
         <script>
         var tempSongIds = '<?php echo json_encode($songIDArray); ?>';
+        // console.log("songs:",tempSongIds);
         tempPlaylist = JSON.parse(tempSongIds);
         console.log(tempPlaylist);
         </script>

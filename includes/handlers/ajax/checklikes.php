@@ -12,20 +12,14 @@ if (isset($_POST['songID'])) {
 
     foreach ($row as $song) {
         $c = 0;
-        // print_r($song);
         if ($song[0] == $songID) {
             $c = 1;
-            if ($c == 1) {
-                $query = mysqli_query($con, "DELETE from likedsongs where email='$user' and songid='$songID'");
-
-                echo "false";
-            }
+            echo "true";
             break;
         }
     }
 
     if ($c == 0) {
-        $query = mysqli_query($con, "INSERT into likedsongs values('','$user','$songID')");
-        echo "true";
+        echo "false";
     }
 }
